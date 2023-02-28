@@ -1,17 +1,23 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Main msg="Welcome to Your Vue.js App"/>
+    <SideBar>
+      v-b-toggle directive
+    </SideBar>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import Main from "@/components/Main.vue";
+import SideBar from "@/components/SideBar.vue";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Main,
+    SideBar,
   }
 }
 </script>
