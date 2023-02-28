@@ -1,26 +1,49 @@
 <template>
-  <div>
-    <b-button v-b-toggle.sidebar-1>Toggle Sidebar</b-button>
-    <b-sidebar id="sidebar-1" title="Sidebar" shadow>
-      <div class="px-3 py-2">
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
-          in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-        </p>
-        <b-img src="https://picsum.photos/500/500/?image=54" fluid thumbnail></b-img>
-      </div>
-    </b-sidebar>
+  <div class="sidebar">
+    here is our side bar
   </div>
 </template>
 
 <script>
-
-import {BButton, BImg, BSidebar} from "bootstrap-vue";
-
 export default {
-  name: "SideBar",
-  components: {BImg, BSidebar, BButton}
-}
+  components: {
+  },
+  data() {
+    return {
+      initialShow: true,
+      header: "<h3>Sidebar</h3>",
+      links: [
+        {name: "Home", href: {name: "home"}, faIcon: ["fas", "home"]},
+        {
+          name: "Dropdown",
+          faIcon: ["fas", "tint"],
+          children: [
+            {
+              name: "Child Item 1",
+              href: {
+                name: "child-item-1",
+              },
+              faIcon: ["fas", "child"],
+            },
+            {
+              name: "Child Item 2",
+              href: {
+                name: "child-item-2",
+              },
+              faIcon: ["fas", "child"],
+            },
+          ],
+        },
+        {name: "About", href: {name: "about"}, faIcon: "users"},
+        {name: "Contact", href: {name: "contact"}, faIcon: "phone"},
+      ],
+    };
+  },
+  methods: {
+    onSidebarChanged() {
+    },
+  },
+};
 </script>
 
 <style scoped>
