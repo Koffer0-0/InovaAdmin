@@ -1,13 +1,16 @@
 <template>
   <div id="app">
-    <Breadcrumb>
-
-    </Breadcrumb>
-    <SideBar>
-
-    </SideBar>
-    <router-view>
-    </router-view>
+    <b-container fluid>
+      <div class="row">
+        <div class="col-md-3">
+          <SideBar></SideBar>
+        </div>
+        <div class="col-md-9">
+          <Breadcrumb></Breadcrumb>
+          <router-view></router-view>
+        </div>
+      </div>
+    </b-container>
   </div>
 </template>
 
