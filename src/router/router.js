@@ -2,6 +2,8 @@ import Main from "@/pages/Main.vue";
 import LabBuilder from "@/pages/LabBuilder.vue";
 import Router from 'vue-router'
 import Vue from "vue";
+import LabConfiguration from "@/pages/LabConfiguration.vue";
+import TemplateConfiguration from "@/pages/TemplateConfiguration.vue";
 
 Vue.use(Router);
 
@@ -10,34 +12,22 @@ const router = new Router({
         {
             path: '/',
             component: Main,
-            // children: [
-            //     {
-            //         path: 'builder',
-            //         component: LabBuilder
-            //     },
-            //     {
-            //         // UserPosts will be rendered inside User's <router-view>
-            //         // when /user/:id/posts is matched
-            //         path: 'courses',
-            //         component: Courses
-            //     }
-            // ],
         },
         {
             path: '/builder/',
             component: LabBuilder,
             props: true,
-            // children: [
-            //     {
-            //         path: 'configuration',
-            //         component: LabConfiguration
-            //     },
-            //     {
-            //         path: 'posts',
-            //         component: UserPosts
-            //     }
-            // ]
-        }
+        },
+        {
+            path: '/builder/config',
+            component: LabConfiguration,
+            props: true,
+        },
+        {
+            path: '/builder/template',
+            component: TemplateConfiguration,
+            props: true,
+        },
     ]
 })
 

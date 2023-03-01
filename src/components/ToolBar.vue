@@ -1,29 +1,21 @@
 <template>
-  <b-container fluid>
-    <b-row>
-      <b-col>
-        <h4>Configure Existing Labs</h4>
-      </b-col>
+  <b-row>
+    <h4>Configure Existing Labs</h4>
+    <b-col md="4" class="ml-md-auto">
       <SearchField>
-
       </SearchField>
-      <CreateButton>
-
-      </CreateButton>
-    </b-row>
-  </b-container>
+    </b-col>
+  </b-row>
 </template>
 
 <script>
-import CreateButton from "@/components/UI/CreateButton.vue";
 import SearchField from "@/components/UI/SearchField.vue";
 
 export default {
   name: "ToolBar",
-  components: {SearchField, CreateButton}
+  components: {SearchField}
 }
 </script>
 
 <style scoped>
-
 </style>

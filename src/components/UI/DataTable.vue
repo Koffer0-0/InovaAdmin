@@ -5,7 +5,7 @@
       <td v-for="(label, labelIndex) in labels" :key="labelIndex">
         {{ label.text }}
       </td>
-      <td>
+      <td class="actions">
         Action
       </td>
     </tr>

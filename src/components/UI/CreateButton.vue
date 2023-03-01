@@ -1,5 +1,5 @@
 <template>
-  <b-col col lg="3">
+  <b-col col>
     <b-button pill variant="outline-secondary">Button</b-button>
   </b-col>
 </template>

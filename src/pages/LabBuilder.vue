@@ -1,8 +1,5 @@
 <template>
-  <div class="lab_builder">
-    <ToolBar>
-    </ToolBar>
-    <DataTable :labels="labels" :data="data" />
+  <div>
   </div>
 </template>
 
@@ -23,13 +20,8 @@ const data = [
 
 export default {
   name: "LabBuilder",
-  components: {ToolBar, DataTable},
-  data() {
-    return {
-      labels: labels,
-      data: data,
-    };
-  }
+  components: {
+  },
 }
 </script>
 
