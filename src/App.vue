@@ -7,9 +7,15 @@
         </div>
         <div class="col-md-10">
           <Breadcrumb>
-            
           </Breadcrumb>
-          <router-view></router-view>
+          <div class="row">
+            <div class="col-md-9">
+              <router-view name="left"></router-view>
+            </div>
+            <div class="col-md-3">
+              <CreateButton v-if="showCreateButton" />
+            </div>
+          </div>
         </div>
       </div>
     </b-container>
@@ -20,13 +26,20 @@
 
 import SideBar from "@/components/SideBar.vue";
 import Breadcrumb from "@/components/Breadcrumb.vue";
+import CreateButton from "@/components/UI/CreateButton.vue";
 
 export default {
   name: 'App',
   components: {
+    CreateButton,
     Breadcrumb,
     SideBar,
-  }
+  },
+  data() {
+    return {
+      showCreateButton: false,
+    };
+  },
 }
 </script>
 
