@@ -31,6 +31,6 @@ export default {
 * {
     margin: 0;
     padding: 0;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 </style>
