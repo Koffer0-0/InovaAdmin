@@ -1,6 +1,5 @@
 <template>
   <div class="sidebar">
-    <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
       <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
         <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
         <span class="fs-5 fw-semibold">Collapsible</span>
@@ -59,7 +58,6 @@
           </div>
         </li>
       </ul>
-    </div>
   </div>
 </template>
 
@@ -69,34 +67,8 @@ export default {
   },
   data() {
     return {
-      initialShow: true,
-      header: "<h3>Sidebar</h3>",
-      links: [
-        {name: "Home", href: {name: "home"}, faIcon: ["fas", "home"]},
-        {
-          name: "Dropdown",
-          faIcon: ["fas", "tint"],
-          children: [
-            {
-              name: "Child Item 1",
-              href: {
-                name: "child-item-1",
-              },
-              faIcon: ["fas", "child"],
-            },
-            {
-              name: "Child Item 2",
-              href: {
-                name: "child-item-2",
-              },
-              faIcon: ["fas", "child"],
-            },
-          ],
-        },
-        {name: "About", href: {name: "about"}, faIcon: "users"},
-        {name: "Contact", href: {name: "contact"}, faIcon: "phone"},
-      ],
-    };
+
+    }
   },
   methods: {
     onSidebarChanged() {
@@ -106,5 +78,7 @@ export default {
 </script>
 
 <style scoped>
-
+  .sidebar {
+    border: 1px solid black;
+  }
 </style>
