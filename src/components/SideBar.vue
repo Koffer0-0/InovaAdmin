@@ -1,64 +1,55 @@
 <template>
-  <div class="sidebar">
-      <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-        <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-        <span class="fs-5 fw-semibold">Collapsible</span>
-      </a>
-      <ul class="list-unstyled ps-0">
-        <li class="mb-1">
-          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
-            Home
-          </button>
-          <div class="collapse" id="home-collapse" style="">
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="#" class="link-dark rounded">Overview</a></li>
-              <li><a href="#" class="link-dark rounded">Updates</a></li>
-              <li><a href="#" class="link-dark rounded">Reports</a></li>
+    <div class="sidebar">
+        <div class="flex-shrink-0 bg-white">
+            <div class="sidebar-header d-flex link-dark border-bottom">
+                <span class="fs-5 fw-semibold">Admin Panel</span>
+                <b-icon icon="list" width="25" height="22"></b-icon>
+            </div>
+            <ul class="list-main list-unstyled">
+                <li class="list-header">
+                    Lab Builder
+                    <ul class="list-under list-unstyled">
+                        <li class="item">
+                            <router-link to="">
+                                Template Configuration
+                            </router-link>
+                        </li>
+                        <li class="item">
+                            <router-link to=""> Stock Images </router-link>
+                        </li>
+                        <li class="item">
+                            <router-link to=""> Lab Configuration </router-link>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list-header">
+                    Course Builder
+                    <ul class="list-under list-unstyled">
+                        <li class="item">
+                            <router-link to=""> Courses </router-link>
+                        </li>
+                        <li class="item">
+                            <router-link to=""> Lectures </router-link>
+                        </li>
+                        <li class="item">
+                            <router-link to=""> Labs </router-link>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list-header">
+                    User Management
+                    <ul class="list-under list-unstyled">
+                        <li class="item">
+                            <router-link to=""> Users </router-link>
+                        </li>
+                        <li class="item">
+                            <router-link to=""> Groups </router-link>
+                        </li>
+                    </ul>
+                </li>
             </ul>
-          </div>
-        </li>
-        <li class="mb-1">
-          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-            Dashboard
-          </button>
-          <div class="collapse" id="dashboard-collapse" style="">
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="#" class="link-dark rounded">Overview</a></li>
-              <li><a href="#" class="link-dark rounded">Weekly</a></li>
-              <li><a href="#" class="link-dark rounded">Monthly</a></li>
-              <li><a href="#" class="link-dark rounded">Annually</a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="mb-1">
-          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-            Orders
-          </button>
-          <div class="collapse" id="orders-collapse" style="">
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="#" class="link-dark rounded">New</a></li>
-              <li><a href="#" class="link-dark rounded">Processed</a></li>
-              <li><a href="#" class="link-dark rounded">Shipped</a></li>
-              <li><a href="#" class="link-dark rounded">Returned</a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="border-top my-3"></li>
-        <li class="mb-1">
-          <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="true">
-            Account
-          </button>
-          <div class="collapse show" id="account-collapse" style="">
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="#" class="link-dark rounded">New...</a></li>
-              <li><a href="#" class="link-dark rounded">Profile</a></li>
-              <li><a href="#" class="link-dark rounded">Settings</a></li>
-              <li><a href="#" class="link-dark rounded">Sign out</a></li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-  </div>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -73,12 +64,50 @@ export default {
   methods: {
     onSidebarChanged() {
     },
-  },
+  }
 };
 </script>
 
 <style scoped>
-  .sidebar {
-    border: 1px solid black;
-  }
+.sidebar {
+    margin-top: 33px;
+    font-size: 13px;
+    width: 200px;
+}
+
+.sidebar-header {
+    justify-content: space-around;
+    padding-bottom: 8px;
+}
+
+.list-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #f9bc2e;
+    margin-top: 12px;
+}
+
+.list-main {
+    padding-left: 25px;
+}
+
+.list-under {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 16px;
+}
+
+.item a {
+    color: #515251;
+    text-decoration: none;
+}
+
+.item:active {
+    padding: 2px 9.5px;
+    border: 1px solid #79747e;
+    background-color: #fffbfe;
+    border-radius: 8px;
+}
 </style>

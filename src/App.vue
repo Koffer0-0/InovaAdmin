@@ -23,7 +23,6 @@
 </template>
 
 <script>
-
 import SideBar from "@/components/SideBar.vue";
 import Breadcrumb from "@/components/Breadcrumb.vue";
 import CreateButton from "@/components/UI/CreateButton.vue";
@@ -44,9 +43,9 @@ export default {
 </script>
 
 <style>
-  * {
+* {
     margin: 0;
     padding: 0;
     border: 1px solid black;
-  }
+}
 </style>
