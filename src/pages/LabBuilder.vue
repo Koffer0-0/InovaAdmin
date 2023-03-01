@@ -1,26 +1,14 @@
 <template>
   <div class="lab_builder">
-    <b-container fluid>
-      <b-row>
-        <b-col>
-          <h4>Configure Existing Labs</h4>
-        </b-col>
-        <b-col cols="12" md="auto">
-          <b-nav-form right>
-            <b-form-input size="sm" class="mr-sm-2" placeholder="Search"></b-form-input>
-          </b-nav-form>
-        </b-col>
-        <b-col col lg="3">
-          <b-button pill variant="outline-secondary">Button</b-button>
-        </b-col>
-      </b-row>
-    </b-container>
+    <ToolBar>
+    </ToolBar>
     <DataTable :labels="labels" :data="data" />
   </div>
 </template>
 
 <script>
 import DataTable from "@/components/UI/DataTable.vue";
+import ToolBar from "@/components/ToolBar.vue";
 
 // Data and labels
 const labels = [
@@ -35,7 +23,7 @@ const data = [
 
 export default {
   name: "LabBuilder",
-  components: {DataTable},
+  components: {ToolBar, DataTable},
   data() {
     return {
       labels: labels,
