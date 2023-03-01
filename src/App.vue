@@ -2,11 +2,13 @@
   <div id="app">
     <b-container fluid>
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-2">
           <SideBar></SideBar>
         </div>
-        <div class="col-md-9">
-          <Breadcrumb></Breadcrumb>
+        <div class="col-md-10">
+          <Breadcrumb>
+            
+          </Breadcrumb>
           <router-view></router-view>
         </div>
       </div>
@@ -29,12 +31,9 @@ export default {
 </script>
 
 <style>
-
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  * {
+    margin: 0;
+    padding: 0;
+    border: 1px solid black;
+  }
 </style>
