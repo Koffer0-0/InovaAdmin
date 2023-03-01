@@ -1,10 +1,16 @@
 <template>
-  <h4>lab builder</h4>
+  <div>
+    here would be some message or what neponyanto or chto to obshee ili srazu
+  </div>
 </template>
 
 <script>
+
+
 export default {
-  name: "LabBuilder"
+  name: "LabBuilder",
+  components: {
+  },
 }
 </script>
 
