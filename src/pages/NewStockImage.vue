@@ -1,12 +1,10 @@
 <template>
-  <div class="comomnButton">
 
-  </div>
 </template>
 
 <script>
 export default {
-  name: "CommonButton"
+  name: "NewStockImage"
 }
 </script>
 
