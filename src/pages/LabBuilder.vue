@@ -1,12 +1,26 @@
 <template>
   <div class="lab_builder">
-    <h4>lab builder</h4>
+    <b-container fluid>
+      <b-row>
+        <b-col>
+          <h4>Configure Existing Labs</h4>
+        </b-col>
+        <b-col cols="12" md="auto">
+          <b-nav-form right>
+            <b-form-input size="sm" class="mr-sm-2" placeholder="Search"></b-form-input>
+          </b-nav-form>
+        </b-col>
+        <b-col col lg="3">
+          <b-button pill variant="outline-secondary">Button</b-button>
+        </b-col>
+      </b-row>
+    </b-container>
     <DataTable :labels="labels" :data="data" />
   </div>
 </template>
 
 <script>
-import DataTable from "@/components/DataTable.vue";
+import DataTable from "@/components/UI/DataTable.vue";
 
 // Data and labels
 const labels = [
