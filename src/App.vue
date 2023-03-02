@@ -10,10 +10,12 @@
           </Breadcrumb>
           <div class="row">
             <div class="col-md-9">
-              <router-view name="left"></router-view>
+              <router-view>
+
+              </router-view>
             </div>
             <div class="col-md-3">
-              <CreateButton v-if="showCreateButton" />
+              here must be the button
             </div>
           </div>
         </div>
@@ -21,22 +23,20 @@
     </b-container>
   </div>
 </template>
-
+<!--TODO сделать кондинонал рендеринг зависимо от двух колумнов в навигаций и роутинге -->
 <script>
 import SideBar from "@/components/SideBar.vue";
 import Breadcrumb from "@/components/Breadcrumb.vue";
-import CreateButton from "@/components/UI/CreateButton.vue";
 
 export default {
   name: 'App',
   components: {
-    CreateButton,
     Breadcrumb,
     SideBar,
   },
   data() {
     return {
-      showCreateButton: false,
+      showCreateButton: true,
     };
   },
 }

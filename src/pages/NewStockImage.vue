@@ -1,5 +1,5 @@
 <template>
-
+  <h1>here is images</h1>
 </template>
 
 <script>

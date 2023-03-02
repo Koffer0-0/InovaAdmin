@@ -1,7 +1,7 @@
 <template>
   <b-row>
     <h4>Configure Existing Labs</h4>
-    <b-col md="4" class="ml-md-auto">
+    <b-col class="ml-md-auto">
       <SearchField>
       </SearchField>
     </b-col>

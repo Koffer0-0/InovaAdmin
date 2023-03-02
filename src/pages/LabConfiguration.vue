@@ -1,12 +1,8 @@
 <template>
   <b-container fluid>
     <b-row>
-      <b-col cols="10">
-        <ToolBar cols="8"></ToolBar>
+        <ToolBar></ToolBar>
         <DataTable :labels="labels" :data="data" />
-      </b-col>
-      <CreateButton>
-      </CreateButton>
     </b-row>
   </b-container>
 </template>
@@ -14,7 +10,6 @@
 <script>
 import DataTable from "@/components/UI/DataTable.vue";
 import ToolBar from "@/components/ToolBar.vue";
-import CreateButton from "@/components/UI/CreateButton.vue";
 
 // Data and labels
 const labels = [
@@ -31,7 +26,7 @@ const data = [
 
 export default {
   name: "LabConfiguration",
-  components: {CreateButton, ToolBar, DataTable},
+  components: {ToolBar, DataTable},
   data() {
     return {
       labels: labels,

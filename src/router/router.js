@@ -3,9 +3,11 @@ import LabBuilder from "@/pages/LabBuilder.vue";
 import Router from 'vue-router'
 import Vue from "vue";
 import LabConfiguration from "@/pages/LabConfiguration.vue";
-import TemplateConfiguration from "@/pages/TemplateConfiguration.vue";
 import NewLab from "@/pages/NewLab.vue";
-import CreateButton from "@/components/UI/CreateButton.vue";
+import Labs from "@/pages/Labs.vue";
+import Courses from "@/pages/Courses.vue";
+import Lectures from "@/pages/Lectures.vue";
+import NewStockImage from "@/pages/NewStockImage.vue";
 
 Vue.use(Router);
 
@@ -13,44 +15,51 @@ const router = new Router({
     routes: [
         {
             path: '/',
-            components: {
-                left: Main,
-                right: ""
-            },
+            component:  Main,
         },
         {
             path: '/builder/',
-            components: {
-                left: LabBuilder,
-                right: ""
-            },
+            component: LabBuilder,
             props: true,
         },
         {
             path: '/builder/config',
-            components: {
-                left: LabConfiguration,
-                right: CreateButton
-            },
+            component: LabConfiguration,
             props: true,
         },
         {
             path: '/builder/config/newlab',
-            components: {
-                left: NewLab,
-                right: ''
-            },
+            component: NewLab,
             props: true,
         },
         {
-            path: '/builder/template',
-            components: {
-                left: TemplateConfiguration,
-                right: CreateButton
-            },
+            path: '/builder/images',
+            component: NewStockImage,
             props: true,
         },
-    ]
+        {
+            path: '/builder/templates',
+            component: NewStockImage,
+            props: true,
+        },
+        {
+            path: '/courses',
+            component: Courses,
+            props: true,
+        },
+        {
+            path: '/lectures',
+            component: Lectures,
+            props: true,
+        },
+        {
+            path: '/labs',
+            component: Labs,
+            props: true,
+        },
+    ],
+    //removing /#/ in url
+    mode: "history",
 })
 
 
