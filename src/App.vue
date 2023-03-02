@@ -1,19 +1,17 @@
 <template>
-  <div id="app">
-    <b-container fluid>
-      <div class="row">
-        <div class="col-md-2">
-          <SideBar></SideBar>
-        </div>
-        <div class="col-md-10">
-          <Breadcrumb>
-          </Breadcrumb>
-          <MainLayout>
-          </MainLayout>
-        </div>
-      </div>
-    </b-container>
-  </div>
+    <div id="app">
+        <b-container fluid>
+            <div class="row">
+                <div class="">
+                    <SideBar></SideBar>
+                </div>
+                <div class="col-md-10">
+                    <Breadcrumb> </Breadcrumb>
+                    <MainLayout> </MainLayout>
+                </div>
+            </div>
+        </b-container>
+    </div>
 </template>
 <!--TODO сделать кондинонал рендеринг зависимо от двух колумнов в навигаций и роутинге -->
 <script>
@@ -22,18 +20,18 @@ import Breadcrumb from "@/components/Breadcrumb.vue";
 import MainLayout from "@/pages/MainLayout.vue";
 
 export default {
-  name: 'App',
-  components: {
-    Breadcrumb,
-    MainLayout,
-    SideBar,
-  },
-  data() {
-    return {
-      showCreateButton: true,
-    };
-  },
-}
+    name: "App",
+    components: {
+        Breadcrumb,
+        MainLayout,
+        SideBar,
+    },
+    data() {
+        return {
+            showCreateButton: true,
+        };
+    },
+};
 </script>
 
 <style>
@@ -41,5 +39,9 @@ export default {
     margin: 0;
     padding: 0;
     /*border: 1px solid black;*/
+}
+
+.border-ridth_test {
+    border-right: 1px solid #dee2e6;
 }
 </style>
