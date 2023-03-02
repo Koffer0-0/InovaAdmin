@@ -1,4 +1,4 @@
-import Main from "@/pages/Main.vue";
+import Main from "@/pages/MainLayout.vue";
 import LabBuilder from "@/pages/LabBuilder.vue";
 import Router from 'vue-router'
 import Vue from "vue";
