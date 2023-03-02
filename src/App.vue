@@ -44,8 +44,4 @@ export default {
 .border-ridth_test {
     border-right: 1px solid #dee2e6;
 }
-
-.border-ridth_test {
-    border-right: 1px solid #dee2e6;
-}
 </style>
