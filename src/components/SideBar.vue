@@ -20,9 +20,7 @@
                             </router-link>
                         </li>
                         <li class="item">
-                            <router-link to="/config">
-                                Lab Configuration
-                            </router-link>
+                            <router-link to="builder/config"> Lab Configuration </router-link>
                         </li>
                     </ul>
                 </li>
