@@ -2,7 +2,7 @@
     <div class="sidebar">
         <div class="flex-shrink-0 bg-white">
             <div class="sidebar-header d-flex link-dark border-bottom">
-                <span class="fs-5 fw-semibold">Admin Panel</span>
+                <span class="fs-5 fw-semibold"><router-link to="/"> Admin Panel</router-link></span>
                 <b-icon icon="list" width="25" height="22"></b-icon>
             </div>
             <ul class="list-main list-unstyled">
@@ -10,15 +10,13 @@
                     Lab Builder
                     <ul class="list-under list-unstyled">
                         <li class="item">
-                            <router-link to="">
-                                Template Configuration
-                            </router-link>
+                            <router-link :to="{ name: 'builder' }">Template Configuration</router-link>
                         </li>
                         <li class="item">
-                            <router-link to=""> Stock Images </router-link>
+                            <router-link to="/images"> Stock Images </router-link>
                         </li>
                         <li class="item">
-                            <router-link to=""> Lab Configuration </router-link>
+                            <router-link to="/config"> Lab Configuration </router-link>
                         </li>
                     </ul>
                 </li>
@@ -26,13 +24,13 @@
                     Course Builder
                     <ul class="list-under list-unstyled">
                         <li class="item">
-                            <router-link to=""> Courses </router-link>
+                            <router-link to="courses"> Courses </router-link>
                         </li>
                         <li class="item">
-                            <router-link to=""> Lectures </router-link>
+                            <router-link to="lectures"> Lectures </router-link>
                         </li>
                         <li class="item">
-                            <router-link to=""> Labs </router-link>
+                            <router-link to="labs"> Labs </router-link>
                         </li>
                     </ul>
                 </li>

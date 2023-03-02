@@ -1,6 +1,7 @@
 <template>
   <div class="container-fluid">
     this is the main page
+    <router-view/>
   </div>
 </template>
 
