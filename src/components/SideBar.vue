@@ -50,21 +50,7 @@
     </div>
 </template>
 
-<script>
-export default {
-  components: {
-  },
-  data() {
-    return {
-
-    }
-  },
-  methods: {
-    onSidebarChanged() {
-    },
-  }
-};
-</script>
+<script></script>
 
 <style scoped>
 .sidebar {
