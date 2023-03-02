@@ -1,5 +1,5 @@
-import Main from "@/pages/Main.vue";
-import LabBuilder from "@/pages/LabBuilder.vue";
+import Main from "@/pages/MainLayout.vue";
+// import LabBuilder from "@/pages/404NotFound.vue";
 import Router from 'vue-router'
 import Vue from "vue";
 import LabConfiguration from "@/pages/LabConfiguration.vue";
@@ -16,12 +16,11 @@ const router = new Router({
         {
             path: '/',
             component:  Main,
+            redirect: '/builder/config'
         },
-        {
-            path: '/builder/',
-            component: LabBuilder,
-            props: true,
-        },
+        { path: '/builder', redirect: '/builder/config' },
+        { path: '/coursebuilder', redirect: '/coursebuilder/courses' },
+        { path: '/usermanagement', redirect: '/usermanagement/users' },
         {
             path: '/builder/config',
             component: LabConfiguration,
