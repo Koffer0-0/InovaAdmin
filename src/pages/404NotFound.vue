@@ -1,6 +1,6 @@
 <template>
   <div>
-    here would be some message or what neponyanto or chto to obshee ili srazu
+    NOT FOUND page
   </div>
 </template>
 
