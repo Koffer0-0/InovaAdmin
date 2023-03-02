@@ -1,5 +1,3 @@
-import Main from "@/pages/MainLayout.vue";
-// import LabBuilder from "@/pages/404NotFound.vue";
 import Router from 'vue-router'
 import Vue from "vue";
 import LabConfiguration from "@/pages/LabConfiguration.vue";
@@ -8,6 +6,7 @@ import Labs from "@/pages/Labs.vue";
 import Courses from "@/pages/Courses.vue";
 import Lectures from "@/pages/Lectures.vue";
 import NewStockImage from "@/pages/NewStockImage.vue";
+import MainLayout from "@/pages/MainLayout.vue";
 
 Vue.use(Router);
 
@@ -15,7 +14,7 @@ const router = new Router({
     routes: [
         {
             path: '/',
-            component:  Main,
+            component:  MainLayout,
             redirect: '/builder/config'
         },
         { path: '/builder', redirect: '/builder/config' },
