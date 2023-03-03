@@ -39,11 +39,9 @@ export default {
 * {
     margin: 0;
     padding: 0;
-    /* border: 1px solid black; */
-}
+    /*font-family: Lato, Reg;*/
+    /*border: 1px solid black;*/
 
-.border-ridth_test {
-    border-right: 1px solid #dee2e6;
 }
 
 .border-ridth_test {
