@@ -12,6 +12,7 @@ import Users from "@/pages/Users.vue";
 import Groups from "@/pages/Groups.vue";
 import NewLab from "@/pages/NewLab.vue";
 import FileEditor from "@/pages/FileEditor.vue";
+import NotFound from "@/pages/NotFound.vue";
 
 Vue.use(Router);
 
@@ -78,6 +79,8 @@ const router = new Router({
             component: FileEditor,
             props: true,
         },
+        { path: '/404', component: NotFound, name: 'NotFound' },
+        { path: '*', redirect: '/404' },
     ],
     //removing /#/ in url
     mode: "history",
