@@ -8,7 +8,8 @@
       <b-col cols="3">
         <router-link to="config/newlab">
           <CreateButton buttonText="New Lab" route-name="newlab">
-          </CreateButton></router-link>
+          </CreateButton>
+        </router-link>
       </b-col>
     </b-row>
   </b-container>

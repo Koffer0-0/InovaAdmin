@@ -7,6 +7,7 @@ import Courses from "@/pages/Courses.vue";
 import Lectures from "@/pages/Lectures.vue";
 import NewStockImage from "@/pages/NewStockImage.vue";
 import MainLayout from "@/pages/MainLayout.vue";
+import FileEditor from "@/pages/FileEditor.vue";
 
 Vue.use(Router);
 
@@ -53,6 +54,11 @@ const router = new Router({
         {
             path: '/labs',
             component: Labs,
+            props: true,
+        },
+        {
+            path: '/editor',
+            component: FileEditor,
             props: true,
         },
     ],

@@ -4,7 +4,7 @@
       <h1>here is the courses page</h1>
     </div>
     <div class="col-md-3">
-      <CreateButton buttonText="Create Course">
+      <CreateButton buttonText="Create New Course">
 
       </CreateButton>
     </div>
