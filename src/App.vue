@@ -7,7 +7,8 @@
                 </div>
                 <div class="col-md-10">
                     <Breadcrumb> </Breadcrumb>
-                    <MainLayout> </MainLayout>
+                    <!-- <MainLayout> </MainLayout> -->
+                    <router-view> </router-view>
                 </div>
             </div>
         </b-container>
@@ -17,13 +18,13 @@
 <script>
 import SideBar from "@/components/SideBar.vue";
 import Breadcrumb from "@/components/Breadcrumb.vue";
-import MainLayout from "@/pages/MainLayout.vue";
+// import MainLayout from "@/pages/MainLayout.vue";
 
 export default {
     name: "App",
     components: {
         Breadcrumb,
-        MainLayout,
+        // MainLayout,
         SideBar,
     },
     data() {
@@ -38,7 +39,7 @@ export default {
 * {
     margin: 0;
     padding: 0;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .border-ridth_test {

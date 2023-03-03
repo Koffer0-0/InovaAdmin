@@ -10,17 +10,18 @@
                     Lab Builder
                     <ul class="list-under list-unstyled">
                         <li class="item">
-                            <router-link :to="{ name: 'builder' }"
+                            <router-link
+                                to="/lab-builder/template-configuration"
                                 >Template Configuration</router-link
                             >
                         </li>
                         <li class="item">
-                            <router-link to="/images">
+                            <router-link to="/lab-builder/stock-images">
                                 Stock Images
                             </router-link>
                         </li>
                         <li class="item">
-                            <router-link to="/config">
+                            <router-link to="/lab-builder/lab-configuration">
                                 Lab Configuration
                             </router-link>
                         </li>
@@ -30,13 +31,19 @@
                     Course Builder
                     <ul class="list-under list-unstyled">
                         <li class="item">
-                            <router-link to="courses"> Courses </router-link>
+                            <router-link to="/course-builder/courses"
+                                >Courses</router-link
+                            >
                         </li>
                         <li class="item">
-                            <router-link to="lectures"> Lectures </router-link>
+                            <router-link to="/course-builder/lectures"
+                                >Lectures</router-link
+                            >
                         </li>
                         <li class="item">
-                            <router-link to="labs"> Labs </router-link>
+                            <router-link to="/course-builder/labs"
+                                >Labs</router-link
+                            >
                         </li>
                     </ul>
                 </li>
@@ -44,10 +51,14 @@
                     User Management
                     <ul class="list-under list-unstyled">
                         <li class="item">
-                            <router-link to=""> Users </router-link>
+                            <router-link to="/user-management/users"
+                                >Users</router-link
+                            >
                         </li>
                         <li class="item">
-                            <router-link to=""> Groups </router-link>
+                            <router-link to="/user-management/groups"
+                                >Groups</router-link
+                            >
                         </li>
                     </ul>
                 </li>
