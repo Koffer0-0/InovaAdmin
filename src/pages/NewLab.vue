@@ -8,7 +8,9 @@
       </CollapseButton>
     </div>
     <div class="col-md-3">
+        <CommonButton buttonText="Configure">
 
+        </CommonButton>
     </div>
   </div>
 </template>
@@ -16,10 +18,11 @@
 <script>
 import DataInputFields from "@/components/UI/DataInputFields.vue";
 import CollapseButton from "@/components/UI/CollapseButton.vue";
+import CommonButton from "@/components/UI/CommonButton.vue";
 
 export default {
   name: "NewLab",
-  components: {CollapseButton, DataInputFields}
+  components: {CommonButton, CollapseButton, DataInputFields}
 }
 </script>
 
