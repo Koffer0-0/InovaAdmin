@@ -28,45 +28,165 @@ const router = new Router({
         },
         {
             path: "/lab-builder/template-configuration",
+            name: "TemplateConfiguration",
             component: TemplateConfiguration,
             props: true,
+            meta: {
+                breadcrumb: [
+                    {
+                        name: "Home",
+                    },
+                ],
+            },
         },
         {
             path: "/lab-builder/stock-images",
+            name: "StockImages",
             component: StockImages,
             props: true,
+            meta: {
+                breadcrumb: [
+                    {
+                        name: "Home",
+                        link: "/",
+                    },
+                    {
+                        name: "lab-builder",
+                        link: "/lab-builder/stock-images",
+                    },
+                    {
+                        name: "stock-images",
+                    },
+                ],
+            },
         },
         {
             path: "/lab-builder/lab-configuration",
+            name: "LabConfiguration",
             component: LabConfiguration,
             props: true,
+            meta: {
+                breadcrumb: [
+                    {
+                        name: "Home",
+                        link: "/",
+                    },
+                    {
+                        name: "lab-builder",
+                        link: "/lab-builder/lab-configuration",
+                    },
+                    {
+                        name: "lab-configuration",
+                    },
+                ],
+            },
         },
         { path: "/course-builder", redirect: "/course-builder/courses" },
         {
             path: "/course-builder/courses",
+            name: "Courses",
             component: Courses,
             props: true,
+            meta: {
+                breadcrumb: [
+                    {
+                        name: "Home",
+                        link: "/",
+                    },
+                    {
+                        name: "course-builder",
+                        link: "/course-builder/courses",
+                    },
+                    {
+                        name: "courses",
+                    },
+                ],
+            },
         },
         {
             path: "/course-builder/lectures",
+            name: "Lectures",
             component: Lectures,
             props: true,
+            meta: {
+                breadcrumb: [
+                    {
+                        name: "Home",
+                        link: "/",
+                    },
+                    {
+                        name: "course-builder",
+                        link: "/course-builder/lectures",
+                    },
+                    {
+                        name: "lectures",
+                    },
+                ],
+            },
         },
         {
             path: "/course-builder/labs",
+            name: "Labs",
             component: Labs,
             props: true,
+            meta: {
+                breadcrumb: [
+                    {
+                        name: "Home",
+                        link: "/",
+                    },
+                    {
+                        name: "course-builder",
+                        link: "/course-builder/labs",
+                    },
+                    {
+                        name: "labs",
+                    },
+                ],
+            },
         },
         { path: "/user-management", redirect: "/user-management/users" },
         {
             path: "/user-management/users",
+            name: "Users",
             component: Users,
             props: true,
+            meta: {
+                breadcrumb: [
+                    {
+                        name: "Home",
+                        link: "/",
+                    },
+                    {
+                        name: "user-management",
+                        link: "/user-management/users",
+                    },
+                    {
+                        name: "users",
+                    },
+                ],
+            },
         },
         {
             path: "/user-management/groups",
+            name: "Groups",
             component: Groups,
             props: true,
+            meta: {
+                breadcrumb: [
+                    {
+                        name: "Home",
+                        link: "/",
+                    },
+                    {
+                        name: "user-management",
+                        link: "/user-management/groups",
+                    },
+                    {
+                        name: "groups",
+                    },
+                ],
+            },
         },
         {
             path: "/builder/config/newlab",
