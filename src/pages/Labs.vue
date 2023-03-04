@@ -2,9 +2,12 @@
   <div class="row">
     <div class="col-md-9">
       <h1>this is labs page</h1>
+      <TabComponent>
+
+      </TabComponent>
     </div>
     <div class="col-md-3">
-      <CreateButton buttonText="Create Lab">
+      <CreateButton buttonText="Create New Lab">
 
       </CreateButton>
     </div>
@@ -13,11 +16,12 @@
 
 <script>
 import CreateButton from "@/components/UI/CreateButton.vue";
+import TabComponent from "@/components/UI/TabComponent.vue";
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Labs",
-  components: {CreateButton}
+  components: {TabComponent, CreateButton}
 }
 </script>
 

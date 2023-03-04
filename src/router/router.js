@@ -11,7 +11,7 @@ import Labs from "@/pages/Labs.vue";
 import Users from "@/pages/Users.vue";
 import Groups from "@/pages/Groups.vue";
 import NewLab from "@/pages/NewLab.vue";
-// import NewStockImage from "@/pages/NewStockImage.vue";
+import FileEditor from "@/pages/FileEditor.vue";
 
 Vue.use(Router);
 
@@ -191,6 +191,11 @@ const router = new Router({
         {
             path: "/builder/config/newlab",
             component: NewLab,
+            props: true,
+        },
+        {
+            path: '/editor',
+            component: FileEditor,
             props: true,
         },
     ],

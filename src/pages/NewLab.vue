@@ -1,18 +1,26 @@
 <template>
+  <form action="">
   <div class="row">
-    <div class="col-md-9">
-      <h1>create new lab</h1>
-      <DataInputFields></DataInputFields>
-      <CollapseButton>
 
-      </CollapseButton>
-    </div>
-    <div class="col-md-3">
+      <div class="col-md-9">
+        <h1>create new lab</h1>
+        <DataInputFields>
+
+        </DataInputFields>
+        <CollapseButton>
+
+        </CollapseButton>
+      </div>
+      <div class="col-md-3">
         <CommonButton buttonText="Configure">
 
         </CommonButton>
-    </div>
-  </div>
+        <CommonButton buttonText="Publish">
+
+        </CommonButton>
+      </div>
+
+  </div>  </form>
 </template>
 
 <script>

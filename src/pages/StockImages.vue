@@ -4,7 +4,7 @@
       <h1>this is stock images page</h1>
     </div>
     <div class="col-md-3">
-      <CreateButton buttonText="Create Course">
+      <CreateButton buttonText="New Stock Image">
 
       </CreateButton>
     </div>
