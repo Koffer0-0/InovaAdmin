@@ -51,11 +51,11 @@ const router = new Router({
                         link: "/",
                     },
                     {
-                        name: "lab-builder",
+                        name: "Lab-Builder",
                         link: "/lab-builder/stock-images",
                     },
                     {
-                        name: "stock-images",
+                        name: "Stock-Images",
                     },
                 ],
             },
@@ -72,11 +72,11 @@ const router = new Router({
                         link: "/",
                     },
                     {
-                        name: "lab-builder",
+                        name: "Lab-Builder",
                         link: "/lab-builder/lab-configuration",
                     },
                     {
-                        name: "lab-configuration",
+                        name: "Lab-Configuration",
                     },
                 ],
             },
@@ -94,11 +94,11 @@ const router = new Router({
                         link: "/",
                     },
                     {
-                        name: "course-builder",
+                        name: "Course-Builder",
                         link: "/course-builder/courses",
                     },
                     {
-                        name: "courses",
+                        name: "Courses",
                     },
                 ],
             },
@@ -115,11 +115,11 @@ const router = new Router({
                         link: "/",
                     },
                     {
-                        name: "course-builder",
+                        name: "Course-Builder",
                         link: "/course-builder/lectures",
                     },
                     {
-                        name: "lectures",
+                        name: "Lectures",
                     },
                 ],
             },
@@ -136,11 +136,11 @@ const router = new Router({
                         link: "/",
                     },
                     {
-                        name: "course-builder",
+                        name: "Course-Builder",
                         link: "/course-builder/labs",
                     },
                     {
-                        name: "labs",
+                        name: "Labs",
                     },
                 ],
             },
@@ -158,11 +158,11 @@ const router = new Router({
                         link: "/",
                     },
                     {
-                        name: "user-management",
+                        name: "User-Management",
                         link: "/user-management/users",
                     },
                     {
-                        name: "users",
+                        name: "Users",
                     },
                 ],
             },
@@ -179,11 +179,11 @@ const router = new Router({
                         link: "/",
                     },
                     {
-                        name: "user-management",
+                        name: "User-Management",
                         link: "/user-management/groups",
                     },
                     {
-                        name: "groups",
+                        name: "Groups",
                     },
                 ],
             },
@@ -194,7 +194,7 @@ const router = new Router({
             props: true,
         },
         {
-            path: '/editor',
+            path: "/editor",
             component: FileEditor,
             props: true,
         },

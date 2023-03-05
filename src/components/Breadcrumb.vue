@@ -51,12 +51,25 @@ export default {
 </script>
 
 <style scoped>
+.breadcrumb-item a {
+    color: #515251;
+    text-decoration: none;
+}
+
+.breadcrumb-item:first-child {
+    font-weight: 700;
+}
+
+.breadcrumb-item:nth-child(2) a {
+    color: #f9bc2e !important;
+}
+
 .breadcrumb-item::before {
     content: none !important;
 }
 
 .breadcrumb-item:not(:last-child):after {
-    content: ">";
+    content: "▶";
     margin: 5px;
 }
 </style>
