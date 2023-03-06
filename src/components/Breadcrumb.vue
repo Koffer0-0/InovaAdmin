@@ -1,27 +1,75 @@
 <template>
-  <div class="breadcrumbs">
-    <b-breadcrumb>
-      <b-breadcrumb-item href="#home">
-        <b-icon icon="house-fill" scale="1.25" shift-v="1.25" aria-hidden="true"></b-icon>
-        Home
-      </b-breadcrumb-item>
-      <b-breadcrumb-item href="#foo">Foo</b-breadcrumb-item>
-      <b-breadcrumb-item href="#bar">Bar</b-breadcrumb-item>
-      <b-breadcrumb-item active>Baz</b-breadcrumb-item>
-    </b-breadcrumb>
-  </div>
+    <div class="breadcrumbs">
+        <b-breadcrumb>
+            <b-breadcrumb-item
+                v-for="(breadcrumb, idx) in breadcrumbList"
+                :key="idx"
+                @click="routeTo(idx)"
+                :class="{ linked: !!breadcrumb.link }"
+            >
+                {{ breadcrumb.name }}
+            </b-breadcrumb-item>
+        </b-breadcrumb>
+    </div>
 </template>
 
 <script>
-import {BBreadcrumb, BBreadcrumbItem, BIcon} from "bootstrap-vue";
+import { BBreadcrumb, BBreadcrumbItem } from "bootstrap-vue";
 
 export default {
-  // eslint-disable-next-line vue/multi-word-component-names
-  name: "Breadcrumb",
-  components: {BIcon, BBreadcrumbItem, BBreadcrumb}
-}
+    // eslint-disable-next-line vue/multi-word-component-names
+    name: "Breadcrumb",
+    components: { BBreadcrumbItem, BBreadcrumb },
+    data() {
+        return {
+            breadcrumbList: [],
+        };
+    },
+
+    mounted() {
+        this.updateList();
+    },
+
+    watch: {
+        $route() {
+            this.updateList();
+        },
+    },
+
+    methods: {
+        routeTo(pRouteTo) {
+            if (this.breadcrumbList[pRouteTo].link) {
+                this.$router.push(this.breadcrumbList[pRouteTo].link);
+            }
+        },
+
+        updateList() {
+            this.breadcrumbList = this.$route.meta.breadcrumb;
+        },
+    },
+};
 </script>
 
 <style scoped>
+.breadcrumb-item a {
+    color: #515251;
+    text-decoration: none;
+}
 
+.breadcrumb-item:first-child {
+    font-weight: 700;
+}
+
+.breadcrumb-item:nth-child(2) a {
+    color: #f9bc2e !important;
+}
+
+.breadcrumb-item::before {
+    content: none !important;
+}
+
+.breadcrumb-item:not(:last-child):after {
+    content: "▶";
+    margin: 5px;
+}
 </style>

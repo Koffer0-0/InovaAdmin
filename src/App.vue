@@ -8,7 +8,7 @@
                 <div class="col-md-10">
                     <Breadcrumb> </Breadcrumb>
                     <!-- <MainLayout> </MainLayout> -->
-                    <router-view> </router-view>
+                    <router-view />
                 </div>
             </div>
         </b-container>
@@ -42,9 +42,5 @@ export default {
     /*font-family: Lato, Reg;*/
     /*border: 1px solid black;*/
 
-}
-
-.border-ridth_test {
-    border-right: 1px solid #dee2e6;
 }
 </style>
