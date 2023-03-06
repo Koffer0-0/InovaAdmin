@@ -7,6 +7,11 @@
 <script>
 
 import * as monaco from 'monaco-editor';
+import('monaco-themes/themes/Espresso Libre.json')
+    .then(data => {
+      monaco.editor.defineTheme('espresso', data);
+    })
+
 export default {
   name: "CodeEditor",
   props: {
@@ -27,7 +32,7 @@ export default {
     const editor = monaco.editor.create(this.$refs.monacoEditor, {
       value: this.content,
       language: "yaml",
-      theme: "vs-dark"
+      theme: "espresso"
     });
 
     editor.getModel().onDidChangeContent(() => {
