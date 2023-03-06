@@ -69,7 +69,13 @@ export default {
 }
 
 .breadcrumb-item:not(:last-child):after {
-    content: "▶";
-    margin: 5px;
+    display: inline-block;
+    content: "";
+    margin: 0 5px;
+    width: 10px;
+    height: 10px;
+    background-image: url("../assets/icon.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 </style>

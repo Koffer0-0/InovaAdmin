@@ -48,11 +48,11 @@ const router = new Router({
                         link: "/",
                     },
                     {
-                        name: "Lab-Builder",
+                        name: "Lab Builder",
                         link: "/lab-builder/stock-images",
                     },
                     {
-                        name: "Stock-Images",
+                        name: "Stock Images",
                     },
                 ],
             },
@@ -69,11 +69,11 @@ const router = new Router({
                         link: "/",
                     },
                     {
-                        name: "Lab-Builder",
+                        name: "Lab Builder",
                         link: "/lab-builder/lab-configuration",
                     },
                     {
-                        name: "Lab-Configuration",
+                        name: "Lab Configuration",
                     },
                 ],
             },
@@ -97,7 +97,7 @@ const router = new Router({
                         link: "/",
                     },
                     {
-                        name: "Course-Builder",
+                        name: "Course Builder",
                         link: "/course-builder/courses",
                     },
                     {
@@ -118,7 +118,7 @@ const router = new Router({
                         link: "/",
                     },
                     {
-                        name: "Course-Builder",
+                        name: "Course Builder",
                         link: "/course-builder/lectures",
                     },
                     {
@@ -139,7 +139,7 @@ const router = new Router({
                         link: "/",
                     },
                     {
-                        name: "Course-Builder",
+                        name: "Course Builder",
                         link: "/course-builder/labs",
                     },
                     {
@@ -161,7 +161,7 @@ const router = new Router({
                         link: "/",
                     },
                     {
-                        name: "User-Management",
+                        name: "User Management",
                         link: "/user-management/users",
                     },
                     {
@@ -182,7 +182,7 @@ const router = new Router({
                         link: "/",
                     },
                     {
-                        name: "User-Management",
+                        name: "User Management",
                         link: "/user-management/groups",
                     },
                     {
