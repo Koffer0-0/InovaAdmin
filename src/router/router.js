@@ -12,15 +12,12 @@ import Users from "@/pages/Users.vue";
 import Groups from "@/pages/Groups.vue";
 import NewLab from "@/pages/NewLab.vue";
 import FileEditor from "@/pages/FileEditor.vue";
+import NotFound from "@/pages/NotFound.vue";
 
 Vue.use(Router);
 
 const router = new Router({
     routes: [
-        // {
-        //     path: "/",
-        //     component: MainLayout,
-        // },
         { path: "", redirect: "/lab-builder/template-configuration" },
         {
             path: "/lab-builder",
@@ -80,6 +77,12 @@ const router = new Router({
                     },
                 ],
             },
+        },
+        {
+            path: "/lab-builder/lab-configuration/new-lab",
+            name: "New Lab",
+            component: NewLab,
+            props: true,
         },
         { path: "/course-builder", redirect: "/course-builder/courses" },
         {
@@ -189,15 +192,12 @@ const router = new Router({
             },
         },
         {
-            path: "/builder/config/newlab",
-            component: NewLab,
-            props: true,
-        },
-        {
             path: "/editor",
             component: FileEditor,
             props: true,
         },
+        { path: '/404', component: NotFound, name: 'NotFound' },
+        { path: '*', redirect: '/404' },
     ],
     //removing /#/ in url
     mode: "history",

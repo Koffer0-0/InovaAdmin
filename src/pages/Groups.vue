@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>this is groups page</h1>
+        <h4>this is groups page</h4>
     </div>
 </template>
 

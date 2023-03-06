@@ -3,7 +3,7 @@
   <div class="row">
 
       <div class="col-md-9">
-        <h1>create new lab</h1>
+        <h5>Lab</h5>
         <DataInputFields>
 
         </DataInputFields>
@@ -35,5 +35,7 @@ export default {
 </script>
 
 <style scoped>
-
+  h5 {
+    font-weight: bold;
+  }
 </style>

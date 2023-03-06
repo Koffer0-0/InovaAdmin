@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="col-md-9">
-      <h1>this is lectures page</h1>
+      <h4>this is lectures page</h4>
     </div>
     <div class="col-md-3">
       <CreateButton buttonText="Create New Lecture">
