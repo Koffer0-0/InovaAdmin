@@ -2,7 +2,7 @@
   <b-container fluid>
     <b-row>
       <b-col cols="9">
-        <ToolBar page-header="Configure Existing Labs" :show-search="true"></ToolBar>
+        <ToolBar page-header="Configure Existing Labs" :show-search="false"></ToolBar>
         <DataTable :labels="labels" :data="data" />
       </b-col>
       <b-col cols="3">

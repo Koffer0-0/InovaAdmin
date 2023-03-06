@@ -1,6 +1,7 @@
 <template>
   <b-row>
     <h4>{{ pageHeader }}</h4>
+    <TabComponent v-if="showtab"></TabComponent>
     <b-col class="ml-md-auto">
       <SearchField v-if="showSearch"></SearchField>
     </b-col>
@@ -9,10 +10,11 @@
 
 <script>
 import SearchField from "@/components/UI/SearchField.vue";
+import TabComponent from "@/components/UI/TabComponent.vue";
 
 export default {
   name: "ToolBar",
-  components: {SearchField},
+  components: {TabComponent, SearchField},
   props: {
     pageHeader: {
       type: String,
@@ -20,8 +22,17 @@ export default {
     },
     showSearch: {
       type: Boolean,
-      default: false
+      default: false,
     },
+    showtab: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  methods: {
+    getData() {
+      this.appInstance.getData()
+    }
   }
 }
 </script>
