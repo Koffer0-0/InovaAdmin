@@ -1,19 +1,29 @@
 <template>
-  <div class="row">
-    <div class="col-md-9">
-      <h1>this is template configuration page</h1>
-    </div>
-    <div class="col-md-3">
-      <CreateButton buttonText="New Template">
+  <b-container fluid>
+    <b-row>
+      <b-col cols="9">
+        <TabComponent>
 
-      </CreateButton>
-    </div>
-  </div>
+        </TabComponent>
+      </b-col>
+      <b-col cols="3">
+        <router-link to="/lab-builder/lab-configuration/new-template">
+          <CreateButton buttonText="New Template" route-name="new template">
+
+          </CreateButton>
+        </router-link>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>
+import TabComponent from "@/components/UI/TabComponent.vue";
+import CreateButton from "@/components/UI/CreateButton.vue";
+
 export default {
-  name: "TemplateConfiguration"
+  name: "TemplateConfiguration",
+  components: {CreateButton, TabComponent}
 }
 </script>
 

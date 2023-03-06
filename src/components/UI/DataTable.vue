@@ -2,10 +2,10 @@
   <table class="table">
     <thead>
     <tr>
-      <td v-for="(label, labelIndex) in labels" :key="labelIndex">
+      <td class = "labels" v-for="(label, labelIndex) in labels" :key="labelIndex">
         {{ label.text }}
       </td>
-      <td class="actions">
+      <td class="labels actions">
         Action
       </td>
     </tr>
@@ -15,10 +15,17 @@
       <td v-for="(label, labelIndex) in labels" :key="labelIndex">
         {{ item[label.field] }}
       </td>
-      <td class = "actions">
-        <b-icon icon="files" variant="dark"></b-icon>
-        <b-icon icon="trash" variant="danger"></b-icon>
-        <b-icon icon="pencil" variant="dark"></b-icon>
+      <td class="actions">
+        <router-link to="/dubplicate">
+          <b-icon icon="files" variant="dark"></b-icon>
+        </router-link>
+        <router-link to="/delete">
+          <b-icon icon="trash" variant="danger"></b-icon>
+        </router-link>
+        <router-link to="/edit">
+          <b-icon icon="pencil" variant="dark"></b-icon>
+        </router-link>
+
       </td>
     </tr>
     </tbody>
@@ -46,5 +53,8 @@ export default {
 <style scoped>
   .actions {
     text-align: right;
+  }
+  .labels{
+    color: #979797;
   }
 </style>

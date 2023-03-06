@@ -1,13 +1,7 @@
 <template>
   <div>
     <b-button v-b-modal.modal-xl variant="primary">xl modal</b-button>
-    <b-modal id="modal-xl" size="xl" title="Template Editor" class="border-0"
-             header-text-variant="light"
-             header-bg-variant="dark"
-             body-bg-variant="dark"
-             body-text-variant="light"
-             footer-bg-variant="dark"
-      fokter>
+    <b-modal id="modal-xl" size="xl" title="Template Editor"  @ok="handleOk">
       <div class="row">
         <div class="col-md-3">
           <FileExplorer :files="files" :openFile="openFile"/>
@@ -90,35 +84,39 @@ export default {
     },
     updateContent(newContent) {
       this.activeFile.content = newContent;
-    }
+    },
+    handleOk() {
+      this.$emit('do something');
+    },
   },
-  watch: {
-    activeFile(newActiveFile) {
-      if (newActiveFile) {
-        // update the Monaco Editor component when the active file changes
-        this.$nextTick(() => {
-          const editor = this.$refs.codeEditor;
-          editor.updateEditorContent(newActiveFile.content);
-        });
-      }
-    }
-  }
 };
 </script>
 
-<style scoped>
-  .editorPopUp {
-    color: #222222;
-    background-color: #222222;
-  }
-  .b-modal {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-  }
-  .b-modal .modal-dialog {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    border-top-right-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-  }
+<style >
+#modal-xl {
+  color: #FFFFFF;
+}
+#modal-xl .modal-content{
+  background-color: #222222;
+}
+#modal-xl h5 {
+  font-size: 16px;
+  margin-left: 1rem;
+  font-weight: 600;
+}
+#modal-xl .modal-header {
+  border-bottom: 0px solid #dee2e6;
+  border-top-left-radius: calc(0rem - 0px);
+}
+
+#modal-xl .modal-body {
+  padding-top: 2rem;
+}
+#modal-xl .modal-footer {
+  border-top: 0px solid #dee2e6;
+  border-bottom-left-radius: calc(0rem - 0px);
+}
+#modal-xl .btn {
+  background-color: #211E1E;
+}
 </style>
