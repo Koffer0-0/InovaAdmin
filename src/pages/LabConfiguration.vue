@@ -6,8 +6,8 @@
         <DataTable :labels="labels" :data="data" />
       </b-col>
       <b-col cols="3">
-        <router-link to="config/newlab">
-          <CreateButton buttonText="New Lab" route-name="newlab">
+        <router-link to="/lab-builder/lab-configuration/new-lab">
+          <CreateButton buttonText="New Lab" route-name="new-lab">
           </CreateButton>
         </router-link>
       </b-col>

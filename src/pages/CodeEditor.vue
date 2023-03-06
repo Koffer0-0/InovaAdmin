@@ -38,7 +38,7 @@ export default {
     editor.getModel().onDidChangeContent(() => {
       this.updateContent(editor.getValue());
     });
-  }
+  },
 };
 </script>
 

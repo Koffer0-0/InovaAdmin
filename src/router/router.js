@@ -18,10 +18,6 @@ Vue.use(Router);
 
 const router = new Router({
     routes: [
-        // {
-        //     path: "/",
-        //     component: MainLayout,
-        // },
         { path: "", redirect: "/lab-builder/template-configuration" },
         {
             path: "/lab-builder",
@@ -81,6 +77,12 @@ const router = new Router({
                     },
                 ],
             },
+        },
+        {
+            path: "/lab-builder/lab-configuration/new-lab",
+            name: "New Lab",
+            component: NewLab,
+            props: true,
         },
         { path: "/course-builder", redirect: "/course-builder/courses" },
         {
@@ -188,11 +190,6 @@ const router = new Router({
                     },
                 ],
             },
-        },
-        {
-            path: "/builder/config/newlab",
-            component: NewLab,
-            props: true,
         },
         {
             path: "/editor",

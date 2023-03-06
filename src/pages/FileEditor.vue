@@ -18,6 +18,7 @@
               :file="activeFile"
               :content="activeFile.content"
               :updateContent="updateContent"
+              :key="activeFile.path"
           />
         </div>
       </div>
@@ -63,7 +64,7 @@ export default {
           name: "file2.yaml",
           path: "path/to/file2.yaml",
           content: "---\n" +
-              "- hosts: all\n" +
+              "- hosts: not sve\n" +
               "  become: yes\n" +
               "  vars:\n" +
               "    page_title: My Landing Page\n" +
@@ -79,26 +80,6 @@ export default {
               "        src: files/landing-page.html.j2\n" +
               "        dest: /var/www/html/index.nginx-debian.html\n"
         },
-        {
-          name: "file3.yaml",
-          path: "path/to/file3.yaml",
-          content: "---\n" +
-              "- hosts: all\n" +
-              "  become: yes\n" +
-              "  vars:\n" +
-              "    page_title: My Landing Page\n" +
-              "    page_description: This is my landing page description.\n" +
-              "  tasks:\n" +
-              "    - name: Install Nginx\n" +
-              "      apt:\n" +
-              "        name: nginx\n" +
-              "        state: latest\n" +
-              "\n" +
-              "    - name: Apply Page Template\n" +
-              "      template:\n" +
-              "        src: files/landing-page.html.j2\n" +
-              "        dest: /var/www/html/index.nginx-debian.html\n"
-        }
       ],
       activeFile: null
     };
@@ -109,6 +90,17 @@ export default {
     },
     updateContent(newContent) {
       this.activeFile.content = newContent;
+    }
+  },
+  watch: {
+    activeFile(newActiveFile) {
+      if (newActiveFile) {
+        // update the Monaco Editor component when the active file changes
+        this.$nextTick(() => {
+          const editor = this.$refs.codeEditor;
+          editor.updateEditorContent(newActiveFile.content);
+        });
+      }
     }
   }
 };
