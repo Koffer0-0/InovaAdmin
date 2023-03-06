@@ -2,7 +2,7 @@
   <b-container fluid>
     <b-row>
       <b-col cols="9">
-        <h4>Configure Existing Labs</h4>
+        <ToolBar page-header="Configure Existing Labs" :show-search="true"></ToolBar>
         <DataTable :labels="labels" :data="data" />
       </b-col>
       <b-col cols="3">
@@ -18,6 +18,7 @@
 <script>
 import DataTable from "@/components/UI/DataTable.vue";
 import CreateButton from "@/components/UI/CreateButton.vue";
+import ToolBar from "@/components/ToolBar.vue";
 
 // Data and labels
 const labels = [
@@ -34,7 +35,7 @@ const data = [
 
 export default {
   name: "LabConfiguration",
-  components: {CreateButton, DataTable},
+  components: {ToolBar, CreateButton, DataTable},
   data() {
     return {
       labels: labels,

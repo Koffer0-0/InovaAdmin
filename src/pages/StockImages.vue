@@ -2,7 +2,7 @@
   <b-container fluid>
     <b-row>
       <b-col cols="9">
-        <h4>Existing Stock Images</h4>
+        <ToolBar page-header="Existing Stock Images"></ToolBar>
         <DataTable :labels="labels" :data="data" />
       </b-col>
       <b-col cols="3">
@@ -19,6 +19,7 @@
 <script>
 import CreateButton from "@/components/UI/CreateButton.vue";
 import DataTable from "@/components/UI/DataTable.vue";
+import ToolBar from "@/components/ToolBar.vue";
 
 // Data and labels
 const labels = [
@@ -35,7 +36,7 @@ const data = [
 
 export default {
   name: "StockImages",
-  components: {DataTable, CreateButton},
+  components: {ToolBar, DataTable, CreateButton},
   data() {
     return {
       labels: labels,

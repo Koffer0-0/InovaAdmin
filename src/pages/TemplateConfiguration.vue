@@ -2,6 +2,7 @@
   <b-container fluid>
     <b-row>
       <b-col cols="9">
+        <ToolBar page-header="List of labs"></ToolBar>
         <TabComponent>
 
         </TabComponent>
@@ -20,10 +21,11 @@
 <script>
 import TabComponent from "@/components/UI/TabComponent.vue";
 import CreateButton from "@/components/UI/CreateButton.vue";
+import ToolBar from "@/components/ToolBar.vue";
 
 export default {
   name: "TemplateConfiguration",
-  components: {CreateButton, TabComponent}
+  components: {ToolBar, CreateButton, TabComponent}
 }
 </script>
 
