@@ -1,9 +1,7 @@
 <template>
   <div class="data_input">
-    <label>Name</label>
-    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
-    <label>Description</label>
-    <b-form-input v-model="text" placeholder="Enter description"></b-form-input>
+    <b-form-input v-model="text" placeholder="Name" class="name_input"></b-form-input>
+    <b-form-textarea v-model="text" placeholder="Description" class="description"></b-form-textarea>
 
   </div>
 </template>
@@ -15,5 +13,11 @@ export default {
 </script>
 
 <style scoped>
-
+  .name_input {
+    background-color: #E5E5E5;
+  }
+  .description {
+    background-color: #E5E5E5;
+    resize: none;
+  }
 </style>

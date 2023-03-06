@@ -1,12 +1,16 @@
 <template>
   <div>
-    <div ref="monacoEditor" style="height: 500px;"></div>
+    <div ref="monacoEditor" style="height: 450px;"></div>
   </div>
 </template>
 
 <script>
 
 import * as monaco from 'monaco-editor';
+import('monaco-themes/themes/Pastels on Dark.json')
+    .then(data => {
+      monaco.editor.defineTheme('espresso', data);
+    })
 export default {
   name: "CodeEditor",
   props: {
@@ -27,13 +31,13 @@ export default {
     const editor = monaco.editor.create(this.$refs.monacoEditor, {
       value: this.content,
       language: "yaml",
-      theme: "vs-dark"
+      theme: "espresso"
     });
 
     editor.getModel().onDidChangeContent(() => {
       this.updateContent(editor.getValue());
     });
-  }
+  },
 };
 </script>
 
