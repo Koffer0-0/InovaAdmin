@@ -7,7 +7,7 @@
       </b-col>
       <b-col cols="3">
         <router-link to="">
-          <CreateButton buttonText="New Template" route-name="">
+          <CreateButton buttonText="New Lab" route-name="">
 
           </CreateButton>
         </router-link>

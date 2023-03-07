@@ -1,14 +1,19 @@
 <template>
-  <div class="row">
-    <div class="col-md-9">
-      <ToolBar page-header="this is lectures page"></ToolBar>
-    </div>
-    <div class="col-md-3">
-      <CreateButton buttonText="Create New Lecture">
+  <b-container fluid>
+    <b-row>
+      <b-col cols="9">
+        <ToolBar page-header="List of lectures"></ToolBar>
+        <DataTable :labels="labels" :data="data" />
+      </b-col>
+      <b-col cols="3">
+        <router-link to="">
+          <CreateButton buttonText="Create New Lecture">
 
-      </CreateButton>
-    </div>
-  </div>
+          </CreateButton>
+        </router-link>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>

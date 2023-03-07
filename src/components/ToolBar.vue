@@ -1,5 +1,5 @@
 <template>
-  <b-row>
+  <b-row class="toolbar">
     <h4>{{ pageHeader }}</h4>
     <TabComponent v-if="showtab"></TabComponent>
     <b-col class="ml-md-auto">
@@ -38,4 +38,8 @@ export default {
 </script>
 
 <style scoped>
+.toolbar {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 </style>
