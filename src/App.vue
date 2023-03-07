@@ -7,8 +7,8 @@
                 </div>
                 <div class="col-md-10">
                     <Breadcrumb> </Breadcrumb>
-                    <!-- <MainLayout> </MainLayout> -->
                     <router-view />
+
                 </div>
             </div>
         </b-container>
