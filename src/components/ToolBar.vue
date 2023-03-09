@@ -1,21 +1,45 @@
 <template>
-  <b-row>
-    <h4>Configure Existing Labs</h4>
+  <b-row class="toolbar">
+    <h4>{{ pageHeader }}</h4>
+    <TabComponent v-if="showtab"></TabComponent>
     <b-col class="ml-md-auto">
-      <SearchField>
-      </SearchField>
+      <SearchField v-if="showSearch"></SearchField>
     </b-col>
   </b-row>
 </template>
 
 <script>
 import SearchField from "@/components/UI/SearchField.vue";
+import TabComponent from "@/components/UI/TabComponent.vue";
 
 export default {
   name: "ToolBar",
-  components: {SearchField}
+  components: {TabComponent, SearchField},
+  props: {
+    pageHeader: {
+      type: String,
+      default: () => "Define header of page plz",
+    },
+    showSearch: {
+      type: Boolean,
+      default: false,
+    },
+    showtab: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  methods: {
+    getData() {
+      this.appInstance.getData()
+    }
+  }
 }
 </script>
 
 <style scoped>
+.toolbar {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 </style>

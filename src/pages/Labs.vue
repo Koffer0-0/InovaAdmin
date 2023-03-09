@@ -2,12 +2,12 @@
   <b-container fluid>
     <b-row>
       <b-col cols="9">
-        <h4>List of labs</h4>
+        <ToolBar page-header="List of labs"></ToolBar>
         <DataTable :labels="labels" :data="data" />
       </b-col>
       <b-col cols="3">
         <router-link to="">
-          <CreateButton buttonText="New Template" route-name="">
+          <CreateButton buttonText="New Lab" route-name="">
 
           </CreateButton>
         </router-link>
@@ -19,6 +19,7 @@
 <script>
 import CreateButton from "@/components/UI/CreateButton.vue";
 import DataTable from "@/components/UI/DataTable.vue";
+import ToolBar from "@/components/ToolBar.vue";
 // Data and labels
 const labels = [
   { text: "ID", field: 'id' },
@@ -35,7 +36,7 @@ const data = [
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Labs",
-  components: {DataTable, CreateButton},
+  components: {ToolBar, DataTable, CreateButton},
   data() {
     return {
       labels: labels,
