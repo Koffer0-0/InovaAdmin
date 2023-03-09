@@ -2,12 +2,11 @@
     <div id="app">
         <b-container fluid>
             <b-row>
-                <b-col cols="2">
+                <b-col cols="2" class="px-0">
                     <SideBar />
                 </b-col>
-                <b-col cols="10">
+                <b-col cols="10" class="px-0">
                     <Breadcrumb />
-                    <!-- <MainLayout /> -->
                     <router-view />
                 </b-col>
             </b-row>
@@ -18,7 +17,6 @@
 <script>
 import SideBar from "@/components/SideBar.vue";
 import Breadcrumb from "@/components/Breadcrumb.vue";
-// import MainLayout from "@/pages/MainLayout.vue";
 
 export default {
     name: "App",
@@ -39,11 +37,14 @@ export default {
 * {
     margin: 0;
     padding: 0;
-    /*border: 1px solid black;*/
+    overflow: hidden;
+}
+
+.container-fluid {
+    height: 100vh;
 }
 
 .col-2:first-child {
     border-right: 1px solid #515251;
-    padding-left: 0;
 }
 </style>

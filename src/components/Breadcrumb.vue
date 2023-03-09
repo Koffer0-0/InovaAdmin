@@ -55,7 +55,7 @@ export default {
     background-color: #fff;
     border-bottom: 1px solid #dee2e6;
     border-radius: 0%;
-    padding: 1.5rem 0;
+    padding: 1.3rem 1rem;
 }
 
 .breadcrumb-item a {
