@@ -1,17 +1,20 @@
 <template>
   <div class="data_input">
     <b-form-input
-        v-bind=""
-        v-model="formData.name"
-        :placeholder="name"
+        v-model="
+      /* eslint-disable-next-line vue/no-mutating-props */
+        formData.name"
+        :placeholder="placeholderName"
         class="name_input"
-        @input="emit('update:name', $event.target.value)">
+>
     </b-form-input>
     <b-form-textarea
-        v-model="formData.description"
-        :placeholder="description"
+        v-model="
+        /* eslint-disable-next-line vue/no-mutating-props */
+        formData.description"
+        :placeholder="placeholderDescription"
         class="description"
-        @input="emit('update:description', $event.target.value)">
+   >
     </b-form-textarea>
   </div>
 </template>
@@ -20,27 +23,20 @@
 export default {
   name: "DataInputFields",
   props: {
-    name: {
-      type: String,
-      default: 'Name'
-    },
-    description: {
-      type: String,
-      default: 'Description'
-    },
-    formType: {
-      type: String,
+    formData: {
+      type: Object,
       required: true,
-      validator: value => ['lab', 'lecture'].includes(value),
     },
-  },
-  data() {
-    return {
-      formData: {
-        name: '',
-        description: '',
-      },
-    };
+    placeholderName: {
+      type: String,
+      default: () => "Name",
+      required: true
+    },
+    placeholderDescription: {
+      type: String,
+      default: () => "Description",
+      required: true
+    },
   },
 }
 </script>
