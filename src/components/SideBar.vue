@@ -6,59 +6,29 @@
                 <b-icon icon="list" width="25" height="22"></b-icon>
             </div>
             <ul class="list-main list-unstyled">
-                <li class="list-header">
-                    Lab Builder
-                    <ul class="list-under list-unstyled">
-                        <li class="item">
+                <li
+                    class="list-header"
+                    v-for="(category, index) in categories"
+                    :key="index"
+                >
+                    {{ category.name }}
+                    <ul
+                        class="list-under list-unstyled"
+                        v-if="category.subcategories"
+                    >
+                        <li
+                            class="item"
+                            v-for="(
+                                subcategory, subindex
+                            ) in category.subcategories"
+                            :key="subindex"
+                        >
                             <router-link
-                                to="/lab-builder/template-configuration"
-                                >Template Configuration</router-link
+                                exact-active-class="active"
+                                :to="subcategory.routerLink"
                             >
-                        </li>
-                        <li class="item">
-                            <router-link to="/lab-builder/stock-images">
-                                Stock Images
+                                {{ subcategory.name }}
                             </router-link>
-                        </li>
-                        <li class="item">
-                            <router-link to="/lab-builder/lab-configuration">
-                                Lab Configuration
-                            </router-link>
-                        </li>
-                    </ul>
-                </li>
-                <li class="list-header">
-                    Course Builder
-                    <ul class="list-under list-unstyled">
-                        <li class="item">
-                            <router-link to="/course-builder/courses"
-                                >Courses</router-link
-                            >
-                        </li>
-                        <li class="item">
-                            <router-link to="/course-builder/lectures"
-                                >Lectures</router-link
-                            >
-                        </li>
-                        <li class="item">
-                            <router-link to="/course-builder/labs"
-                                >Labs</router-link
-                            >
-                        </li>
-                    </ul>
-                </li>
-                <li class="list-header">
-                    User Management
-                    <ul class="list-under list-unstyled">
-                        <li class="item">
-                            <router-link to="/user-management/users"
-                                >Users</router-link
-                            >
-                        </li>
-                        <li class="item">
-                            <router-link to="/user-management/groups"
-                                >Groups</router-link
-                            >
                         </li>
                     </ul>
                 </li>
@@ -67,13 +37,70 @@
     </div>
 </template>
 
-<script></script>
+<script>
+export default {
+    data() {
+        return {
+            categories: [
+                {
+                    name: "Lab Builder",
+                    subcategories: [
+                        {
+                            name: "Template Configuration",
+                            routerLink: "/lab-builder/template-configuration",
+                        },
+                        {
+                            name: "Stock Images",
+                            routerLink: "/lab-builder/stock-images",
+                        },
+                        {
+                            name: "Lab Configuration",
+                            routerLink: "/lab-builder/lab-configuration",
+                        },
+                    ],
+                },
+                {
+                    name: "Course Builder",
+                    subcategories: [
+                        {
+                            name: "Courses",
+                            routerLink: "/course-builder/courses",
+                        },
+                        {
+                            name: "Lectures",
+                            routerLink: "/course-builder/lectures",
+                        },
+                        {
+                            name: "Labs",
+                            routerLink: "/course-builder/labs",
+                        },
+                    ],
+                },
+                {
+                    name: "User Management",
+                    subcategories: [
+                        {
+                            name: "Users",
+                            routerLink: "/user-management/users",
+                        },
+                        {
+                            name: "Groups",
+                            routerLink: "/user-management/groups",
+                        },
+                    ],
+                },
+            ],
+        };
+    },
+};
+</script>
 
 <style scoped>
 .sidebar {
     margin-top: 33px;
-    font-size: 13px;
-    width: 210px;
+    margin-right: 0;
+    font-size: 16px;
+    width: 250px;
 }
 
 .sidebar-header {
@@ -87,6 +114,7 @@
     align-items: flex-start;
     color: #f9bc2e;
     margin-top: 12px;
+    cursor: default;
 }
 
 .list-main {
@@ -115,11 +143,15 @@
     padding: 2px 9.5px;
 }
 
-/* .item:active a {
-    padding: 2px 9.5px;
-} */
+.item a:hover {
+    color: #000;
+}
 
-.item::before {
+.item a.active {
+    padding: 2px 9.5px;
+}
+
+.item a::before {
     content: "";
     position: absolute;
     top: 0;
@@ -130,9 +162,10 @@
     pointer-events: none;
     border-radius: 8px;
     background-color: transparent;
+    z-index: -1;
 }
 
-.item:active::before {
+.item a.active::before {
     border: 1px solid #79747e;
     background-color: #fffbfe;
 }

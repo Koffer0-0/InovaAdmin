@@ -51,6 +51,13 @@ export default {
 </script>
 
 <style scoped>
+.breadcrumb {
+    background-color: #fff;
+    border-bottom: 1px solid #dee2e6;
+    border-radius: 0%;
+    padding: 1.5rem 0;
+}
+
 .breadcrumb-item a {
     color: #515251;
     text-decoration: none;

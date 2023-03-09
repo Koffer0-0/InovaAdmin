@@ -1,16 +1,16 @@
 <template>
     <div id="app">
         <b-container fluid>
-            <div class="row">
-                <div class="">
-                    <SideBar></SideBar>
-                </div>
-                <div class="col-md-10">
-                    <Breadcrumb> </Breadcrumb>
-                    <!-- <MainLayout> </MainLayout> -->
+            <b-row>
+                <b-col cols="2">
+                    <SideBar />
+                </b-col>
+                <b-col cols="10">
+                    <Breadcrumb />
+                    <!-- <MainLayout /> -->
                     <router-view />
-                </div>
-            </div>
+                </b-col>
+            </b-row>
         </b-container>
     </div>
 </template>
@@ -40,5 +40,10 @@ export default {
     margin: 0;
     padding: 0;
     /*border: 1px solid black;*/
+}
+
+.col-2:first-child {
+    border-right: 1px solid #515251;
+    padding-left: 0;
 }
 </style>
