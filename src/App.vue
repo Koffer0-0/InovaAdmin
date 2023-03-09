@@ -2,10 +2,10 @@
     <div id="app">
         <b-container fluid>
             <b-row>
-                <b-col cols="2" v-if="!is404" class="px-0">
+                <b-col cols="2" v-if="!is404">
                     <SideBar />
                 </b-col>
-                <b-col cols="10" class="px-0">
+                <b-col cols="10">
                     <Breadcrumb v-if="!is404"></Breadcrumb>
                     <router-view />
                 </b-col>
