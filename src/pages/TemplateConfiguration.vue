@@ -2,8 +2,14 @@
   <b-container fluid>
     <b-row>
       <b-col cols="9">
-        <TabComponent @tab-activated="setActiveTab"></TabComponent>
-        <div v-if="activeTab === 'data1'">
+        <b-row>
+          <TabComponent @tab-activated="setActiveTab"></TabComponent>
+          <b-col class="ml-md-auto">
+          </b-col>
+          <SearchField></SearchField>
+        </b-row>
+
+        <div class="table" v-if="activeTab === 'data1'">
           <DataTable :data="data1" :labels="labels1"/>
         </div>
         <div v-else-if="activeTab === 'data2'">
@@ -11,8 +17,13 @@
         </div>
       </b-col>
       <b-col cols="3">
-        <router-link to="/lab-builder/lab-configuration/new-template">
-          <CreateButton buttonText="New Template" route-name="new template">
+        <router-link to="/lab-builder/lab-configuration/new-template" v-if="activeTab === 'data1'">
+          <CreateButton buttonText="New Template" route-name="new scenario">
+
+          </CreateButton>
+        </router-link>
+        <router-link to="/lab-builder/lab-configuration/new-template" v-if="activeTab === 'data2'">
+          <CreateButton buttonText="New Scenario" route-name="new template">
 
           </CreateButton>
         </router-link>
@@ -25,6 +36,7 @@
 import CreateButton from "@/components/UI/CreateButton.vue";
 import DataTable from "@/components/UI/DataTable.vue";
 import TabComponent from "@/components/UI/TabComponent.vue";
+import SearchField from "@/components/UI/SearchField.vue";
 
 const labels1 = [
   { text: "ID", field: 'id' },
@@ -52,7 +64,7 @@ const data2 = [
 
 export default {
   name: "TemplateConfiguration",
-  components: {TabComponent, CreateButton, DataTable},
+  components: {SearchField, TabComponent, CreateButton, DataTable},
   data() {
     return {
       tabIndex: 0,
@@ -73,5 +85,7 @@ export default {
 </script>
 
 <style scoped>
-
+.table {
+  margin-top: 30px;
+}
 </style>

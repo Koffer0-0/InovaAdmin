@@ -30,15 +30,17 @@ export default {
 </script>
 
 <style scoped>
-.tabs{
-  margin-bottom: 40px;
-}
+/*.tabs{*/
+/*  margin-bottom: 40px;*/
+/*}*/
 .nav-pills .nav-link {
   border-radius: 0;
 }
 
 .nav-link {
   padding: 1rem;
+  width: 250px;
+  text-align: center;
   background-color: #F3F3F3;
   color: #1B1C1D;
 }

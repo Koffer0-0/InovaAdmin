@@ -54,6 +54,9 @@ export default {
   .actions {
     text-align: right;
   }
+  td.actions svg {
+    margin: 0.2rem;
+  }
   .labels{
     color: #979797;
   }

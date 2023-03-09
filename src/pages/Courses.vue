@@ -2,11 +2,12 @@
   <b-container fluid>
     <b-row>
       <b-col cols="9">
-        <ToolBar page-header="Courses"></ToolBar>
+        <ToolBar page-header="Courses"
+                 :show-search="false"></ToolBar>
       </b-col>
       <b-col cols="3">
         <router-link to="">
-          <CreateButton buttonText="New Template" route-name="">
+          <CreateButton buttonText="New Course" route-name="">
 
           </CreateButton>
         </router-link>

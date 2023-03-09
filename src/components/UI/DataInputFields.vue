@@ -2,7 +2,6 @@
   <div class="data_input">
     <b-form-input v-model="text" placeholder="Name" class="name_input"></b-form-input>
     <b-form-textarea v-model="text" placeholder="Description" class="description"></b-form-textarea>
-
   </div>
 </template>
 
@@ -19,5 +18,8 @@ export default {
   .description {
     background-color: #E5E5E5;
     resize: none;
+  }
+  .data_input input, textarea {
+    margin-bottom: 20px;
   }
 </style>

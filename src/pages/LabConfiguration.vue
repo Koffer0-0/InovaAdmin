@@ -4,7 +4,7 @@
             <b-col cols="9">
                 <ToolBar
                     page-header="Configure Existing Labs"
-                    :show-search="false"
+                    :show-search="false" :showtab="true"
                 ></ToolBar>
                 <DataTable :labels="labels" :data="data" />
             </b-col>
