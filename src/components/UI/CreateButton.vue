@@ -37,6 +37,7 @@ export default {
 
 <style scoped>
   .create_button {
+    margin-bottom: 0.5rem;
     color: #6750A4;
     background: #fff;
     font-family: Roboto,serif;
