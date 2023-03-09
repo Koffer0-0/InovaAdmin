@@ -117,7 +117,7 @@ export default {
 }
 
 .list-main {
-    padding-left: 40px;
+    padding-left: 25px;
 }
 
 .list-under {
