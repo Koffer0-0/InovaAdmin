@@ -21,7 +21,7 @@
       <b-card no-body class="mb-1">
         <b-collapse :id="'accordion-' + (index + 2)" accordion="my-accordion" role="tabpanel">
           <b-card-body>
-            SOME TEXT MUST BE HERE FOR EXAMPLE
+
           </b-card-body>
         </b-collapse>
       </b-card>
