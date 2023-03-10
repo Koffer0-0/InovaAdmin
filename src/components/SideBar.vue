@@ -97,14 +97,13 @@ export default {
 
 <style scoped>
 .sidebar {
-    margin-top: 33px;
-    margin-right: 0;
     font-size: 16px;
-    width: 250px;
+    width: 325px;
 }
 
 .sidebar-header {
     justify-content: space-around;
+    margin-top: 33px;
     padding-bottom: 8px;
 }
 
@@ -141,10 +140,6 @@ export default {
     text-decoration: none;
     box-sizing: border-box;
     padding: 2px 9.5px;
-}
-
-.item a:hover {
-    color: #000;
 }
 
 .item a.active {

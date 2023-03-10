@@ -39,17 +39,19 @@ export default {
     },
   },
 }
+
 </script>
 
 <style scoped>
-  .name_input {
-    background-color: #E5E5E5;
-  }
-  .description {
-    background-color: #E5E5E5;
+.name_input {
+    background-color: #e5e5e5;
+}
+.description {
+    background-color: #e5e5e5;
     resize: none;
-  }
-  .data_input input, textarea {
+}
+.data_input input,
+textarea {
     margin-bottom: 20px;
-  }
+}
 </style>

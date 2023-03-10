@@ -17,37 +17,39 @@
 <script>
 import SideBar from "@/components/SideBar.vue";
 import Breadcrumb from "@/components/Breadcrumb.vue";
-// import MainLayout from "@/pages/MainLayout.vue";
 
 export default {
-  name: "App",
-  components: {
-    Breadcrumb,
-    // MainLayout,
-    SideBar,
-  },
-  data() {
-    return {
-      showCreateButton: true,
-    };
-  },
-  computed: {
-    is404() {
-      return this.$route.name === "NotFound";
+    name: "App",
+    components: {
+        Breadcrumb,
+        // MainLayout,
+        SideBar,
     },
-  },
+    data() {
+        return {
+            showCreateButton: true,
+        };
+    },
+    computed: {
+        is404() {
+            return this.$route.name === "NotFound";
+        },
+    },
 };
 </script>
 
 <style>
 * {
-  margin: 0;
-  padding: 0;
-  /*border: 1px solid black;*/
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.container-fluid {
+    height: 100vh;
 }
 
 .col-2:first-child {
     border-right: 1px solid #515251;
-    padding-left: 0;
 }
 </style>
