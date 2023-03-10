@@ -7,9 +7,9 @@
             v-model="formData"
             form-type="lab" placeholder-name="Lab Name" placeholder-description="Lab Description" :form-data="formData">
         </DataInputFields>
-        <CollapseButton>
+        <CollapseSection select-text="Select Images">
 
-        </CollapseButton>
+        </CollapseSection>
       </div>
       <div class="col-md-3">
         <CommonButton
@@ -31,13 +31,13 @@
 
 <script>
 import DataInputFields from "@/components/UI/DataInputFields.vue";
-import CollapseButton from "@/components/UI/CollapseButton.vue";
+import CollapseSection from "@/components/UI/CollapseSection.vue";
 import CommonButton from "@/components/UI/CommonButton.vue";
 // import axios from "axios";
 
 export default {
   name: "NewLab",
-  components: {CommonButton, CollapseButton, DataInputFields},
+  components: {CommonButton, CollapseSection, DataInputFields},
   data() {
     return {
       formData: { name: '', description: '' },

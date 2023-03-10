@@ -25,6 +25,7 @@ const labels = [
   { text: "ID", field: 'id' },
   { text: "Name", field: 'name' },
   { text: "Description", field: 'description' },
+  { text: "Actions", field: 'actions' },
 ]
 const data = [
   { id: 10, name: 'Lab 1', description: 'Password Cracking' },
