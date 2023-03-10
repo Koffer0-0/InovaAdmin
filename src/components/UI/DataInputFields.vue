@@ -1,49 +1,45 @@
 <template>
-    <div class="data_input">
-        <b-form-input
-            v-model="formData.name"
-            :placeholder="name"
-            class="name_input"
-            @input="emit('update:name', $event.target.value)"
-        >
-        </b-form-input>
-        <b-form-textarea
-            v-model="formData.description"
-            :placeholder="description"
-            class="description"
-            @input="emit('update:description', $event.target.value)"
-        >
-        </b-form-textarea>
-    </div>
+  <div class="data_input">
+    <b-form-input
+        v-model="
+      /* eslint-disable-next-line vue/no-mutating-props */
+        formData.name"
+        :placeholder="placeholderName"
+        class="name_input"
+>
+    </b-form-input>
+    <b-form-textarea
+        v-model="
+        /* eslint-disable-next-line vue/no-mutating-props */
+        formData.description"
+        :placeholder="placeholderDescription"
+        class="description"
+   >
+    </b-form-textarea>
+  </div>
 </template>
 
 <script>
 export default {
-    name: "DataInputFields",
-    props: {
-        name: {
-            type: String,
-            default: "Name",
-        },
-        description: {
-            type: String,
-            default: "Description",
-        },
-        formType: {
-            type: String,
-            required: true,
-            validator: (value) => ["lab", "lecture"].includes(value),
-        },
+  name: "DataInputFields",
+  props: {
+    formData: {
+      type: Object,
+      required: true,
     },
-    data() {
-        return {
-            formData: {
-                name: "",
-                description: "",
-            },
-        };
+    placeholderName: {
+      type: String,
+      default: () => "Name",
+      required: true
     },
-};
+    placeholderDescription: {
+      type: String,
+      default: () => "Description",
+      required: true
+    },
+  },
+}
+
 </script>
 
 <style scoped>
