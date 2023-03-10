@@ -6,6 +6,8 @@
     </b-button>
     <b-card no-body class="mb-1">
       <b-collapse id="accordion-1" v-model="visible" accordion="my-accordion" role="tabpanel">
+        <SearchField></SearchField>
+
         <b-card-body>
           <DataTable :labels="labels" :data="data" :showAdd="true" @add-item="addItem">
 
@@ -31,6 +33,7 @@
 
 <script>
 import DataTable from "@/components/UI/DataTable.vue";
+import SearchField from "@/components/UI/SearchField.vue";
 
 const labels = [
   {text: "Name", field: 'name'},
@@ -44,7 +47,7 @@ const data = [
 ];
 export default {
   name: "CollapseButton",
-  components: {DataTable},
+  components: {SearchField, DataTable},
   props: {
     selectText: {
       type: String,

@@ -1,41 +1,45 @@
 <template>
   <b-form inline>
-      <b-button block class="collapse-btn" @click="toggleForm">
-        Add Network
-        <b-icon icon="plus" class="icon"></b-icon>
-      </b-button>
+    <b-button block class="collapse-btn" @click="toggleForm">
+      Add Network
+      <b-icon icon="plus" class="icon"></b-icon>
+    </b-button>
     <div class="container center">
       <div v-if="showInputs" class="row network-inputs">
         <div>
           <b-icon icon="plus" class="add-btn" @click="createNetwork"></b-icon>
         </div>
         <div>
-        <b-form-input id="inline-form-input-name"
-                      class="mb-2 mr-sm-2 mb-sm-0"
-                      placeholder="Network Name:"
-                      v-model="name"
-                      required
-        ></b-form-input>
-        <b-form-input id="inline-form-input-username"
-                      placeholder="Network Address..."
-                      v-model="address"
-                      required></b-form-input>
+          <b-form-input id="inline-form-input-name"
+                        class="mb-2 mr-sm-2 mb-sm-0 my-1"
+                        placeholder="Network Name:"
+                        v-model="name"
+                        required
+          ></b-form-input>
+          <b-form-input id="inline-form-input-username"
+                        placeholder="Network Address..."
+                        class="mb-2 mr-sm-2 mb-sm-0 my-1"
+                        v-model="address"
+                        required></b-form-input>
         </div>
       </div>
       <div v-for="(network, index) in networks" :key="index" class="row network-inputs">
         <div>
           <b-icon icon="trash" class="add-btn" @click="deleteNetwork(index)"></b-icon>
         </div>
-        <b-form-input id="inline-form-input-name"
-                      class="mb-2 mr-sm-2 mb-sm-0"
-                      placeholder="Network Name:"
-                      v-model="network.name"
-                      required
-        ></b-form-input>
-        <b-form-input id="inline-form-input-username"
-                      placeholder="Network Address..."
-                      v-model="network.address"
-                      required></b-form-input>
+        <div>
+          <b-form-input id="inline-form-input-name"
+                        class="mb-2 mr-sm-2 mb-sm-0 my-1"
+                        placeholder="Network Name:"
+                        v-model="network.name"
+                        required
+          ></b-form-input>
+          <b-form-input id="inline-form-input-username"
+                        placeholder="Network Address..."
+                        class="mb-2 mr-sm-2 mb-sm-0 my-1"
+                        v-model="network.address"
+                        required></b-form-input>
+        </div>
       </div>
     </div>
 
@@ -83,7 +87,8 @@ export default {
   border: none;
 }
 
-.network-inputs {
-
+.add-btn {
+  padding-top: 5px;
+  font-size: 1.8rem;
 }
 </style>
