@@ -5,12 +5,12 @@ import Vue from "vue";
 import TemplateConfiguration from "@/pages/TemplateConfiguration.vue";
 import StockImages from "@/pages/StockImages.vue";
 import LabConfiguration from "@/pages/LabConfiguration.vue";
+import NewLab from "@/pages/NewLab.vue";
 import Courses from "@/pages/Courses.vue";
 import Lectures from "@/pages/Lectures.vue";
 import Labs from "@/pages/Labs.vue";
 import Users from "@/pages/Users.vue";
 import Groups from "@/pages/Groups.vue";
-import NewLab from "@/pages/NewLab.vue";
 import FileEditor from "@/pages/FileEditor.vue";
 import NotFound from "@/pages/NotFound.vue";
 
@@ -80,9 +80,28 @@ const router = new Router({
         },
         {
             path: "/lab-builder/lab-configuration/new-lab",
-            name: "New Lab",
+            name: "NewLab",
             component: NewLab,
             props: true,
+            meta: {
+                breadcrumb: [
+                    {
+                        name: "Home",
+                        link: "/",
+                    },
+                    {
+                        name: "Lab Builder",
+                        link: "/lab-builder/lab-configuration",
+                    },
+                    {
+                        name: "Lab Configuration",
+                        link: "/lab-builder/lab-configuration",
+                    },
+                    {
+                        name: "New Lab",
+                    },
+                ],
+            },
         },
         { path: "/course-builder", redirect: "/course-builder/courses" },
         {
@@ -196,8 +215,8 @@ const router = new Router({
             component: FileEditor,
             props: true,
         },
-        { path: '/404', component: NotFound, name: 'NotFound' },
-        { path: '*', redirect: '/404' },
+        { path: "/404", component: NotFound, name: "NotFound" },
+        { path: "*", redirect: "/404" },
     ],
     //removing /#/ in url
     mode: "history",
