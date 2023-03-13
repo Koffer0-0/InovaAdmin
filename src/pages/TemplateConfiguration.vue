@@ -1,7 +1,5 @@
 <template>
-  <b-container fluid>
-    <b-row>
-      <b-col cols="9">
+    <b-container fluid>
         <b-row>
           <TabComponent @tab-activated="setActiveTab" :tabs="tabs" ></TabComponent>
           <b-col class="ml-md-auto">
@@ -39,27 +37,31 @@ import TabComponent from "@/components/UI/TabComponent.vue";
 import SearchField from "@/components/UI/SearchField.vue";
 
 const labels1 = [
-  { text: "ID", field: 'id' },
-  { text: "Name", field: 'name' },
-  { text: "Description", field: 'description' },
-  { text: "Images", field: 'images' },
-]
+    { text: "ID", field: "id" },
+    { text: "Name", field: "name" },
+    { text: "Description", field: "description" },
+    { text: "Images", field: "images" },
+];
 const labels2 = [
-  { text: "ID", field: 'id' },
-  { text: "Name", field: 'name' },
-  { text: "Description", field: 'description' },
-]
+    { text: "ID", field: "id" },
+    { text: "Name", field: "name" },
+    { text: "Description", field: "description" },
+];
 const data1 = [
-  { id: 10, name: '3r4f34f 1', description: 'Password Cracking' },
-  { id: 11, name: '34f34r 13', description: 'SIEM and MISP machine' },
-  { id: 15, name: 'wfwef 15', description: 'AD auditing lab' },
-  { id: 34, name: 'wefwef 31', description: 'Threat Hunting and Investigation' },
+    { id: 10, name: "3r4f34f 1", description: "Password Cracking" },
+    { id: 11, name: "34f34r 13", description: "SIEM and MISP machine" },
+    { id: 15, name: "wfwef 15", description: "AD auditing lab" },
+    {
+        id: 34,
+        name: "wefwef 31",
+        description: "Threat Hunting and Investigation",
+    },
 ];
 const data2 = [
-  { id: 10, name: 'Lab 1', description: 'Password Cracking' },
-  { id: 11, name: 'Lab 13', description: 'SIEM and MISP machine' },
-  { id: 15, name: 'Lab 15', description: 'AD auditing lab' },
-  { id: 34, name: 'Lab 31', description: 'Threat Hunting and Investigation' },
+    { id: 10, name: "Lab 1", description: "Password Cracking" },
+    { id: 11, name: "Lab 13", description: "SIEM and MISP machine" },
+    { id: 15, name: "Lab 15", description: "AD auditing lab" },
+    { id: 34, name: "Lab 31", description: "Threat Hunting and Investigation" },
 ];
 
 export default {
@@ -86,10 +88,11 @@ export default {
   }
 
 }
+
 </script>
 
 <style scoped>
 .table {
-  margin-top: 30px;
+    margin-top: 30px;
 }
 </style>
