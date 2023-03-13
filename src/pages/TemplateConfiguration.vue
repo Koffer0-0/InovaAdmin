@@ -1,21 +1,21 @@
 <template>
   <b-container fluid>
     <b-row>
-      <TabComponent @tab-activated="setActiveTab" :tabs="tabs"></TabComponent>
-      <b-col class="ml-md-auto">
-      </b-col>
-      <SearchField :data="data1"
-                   search-key="description"
-                   v-on:search="filteredData1 = $event"
-      ></SearchField>
-    </b-row>
-    <b-row>
-      <b-col>
+      <b-col cols="9">
+        <b-row>
+          <TabComponent @tab-activated="setActiveTab" :tabs="tabs"></TabComponent>
+          <b-col class="ml-md-auto"> </b-col>
+          <SearchField
+              :data="data1"
+              :search-key="['id', 'name', 'description']"
+              v-on:search="filteredData1 = $event"
+          ></SearchField>
+        </b-row>
         <div class="table" v-if="activeTab === 'tab1'">
-          <DataTable :data="data1" :labels="labels1" :show-actions="true"/>
+          <DataTable :data="data1" :labels="labels1" />
         </div>
         <div v-else-if="activeTab === 'tab2'">
-          <DataTable :data="data2" :labels="labels2" :show-actions="true"/>
+          <DataTable :data="data2" :labels="labels2" />
         </div>
       </b-col>
       <b-col cols="3">
@@ -23,11 +23,7 @@
             to="/lab-builder/template-configuration/new-template-config"
             v-if="activeTab === 'tab1'"
         >
-          <CreateButton
-              buttonText="New Template"
-              route-name="new scenario"
-          >
-          </CreateButton>
+          <CreateButton buttonText="New Template"/>
         </router-link>
         <router-link
             to="/lab-builder/template-configuration/new-scenario-config"
@@ -35,9 +31,7 @@
         >
           <CreateButton
               buttonText="New Scenario"
-              route-name="new template"
-          >
-          </CreateButton>
+          />
         </router-link>
       </b-col>
     </b-row>
