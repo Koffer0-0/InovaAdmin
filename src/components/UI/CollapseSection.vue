@@ -23,7 +23,17 @@
       <b-card no-body class="mb-1">
         <b-collapse :id="'accordion-' + (index + 2)" accordion="my-accordion" role="tabpanel">
           <b-card-body>
-
+            <TabComponent :tabs="tabs" @tab-activated="setActiveTab" >
+            </TabComponent>
+            <div class="table" v-if="activeTab === 'tab1'">
+              SOME DATA
+            </div>
+            <div class="table" v-else-if="activeTab === 'tab2'">
+              APPS AND SERVICES
+            </div>
+            <div v-else-if="activeTab === 'tab3'">
+              <DataTable :data="data" :labels="labels" :show-actions="true"/>
+            </div>
           </b-card-body>
         </b-collapse>
       </b-card>
@@ -34,6 +44,7 @@
 <script>
 import DataTable from "@/components/UI/DataTable.vue";
 import SearchField from "@/components/UI/SearchField.vue";
+import TabComponent from "@/components/UI/TabComponent.vue";
 
 const labels = [
   {text: "Name", field: 'name'},
@@ -47,7 +58,7 @@ const data = [
 ];
 export default {
   name: "CollapseButton",
-  components: {SearchField, DataTable},
+  components: {TabComponent, SearchField, DataTable},
   props: {
     selectText: {
       type: String,
@@ -62,6 +73,12 @@ export default {
       configuringItem: null,
       items: [],
       visible: false,
+      tabs: [
+        { id: 'tab1', title: 'Data'},
+        { id: 'tab2', title: 'App&Services'},
+        { id: 'tab3', title: 'Scenarios'},
+      ],
+      activeTab: 'tab1',
     }
   },
   methods: {
@@ -70,8 +87,11 @@ export default {
       this.items.push(item);
       this.isConfiguring = true;
       this.configuringItem = name;
-    }
-  }
+    },
+    setActiveTab(tabId) {
+      this.activeTab = tabId;
+    },
+  },
 }
 </script>
 
@@ -89,5 +109,4 @@ export default {
   background-color: #979797;
   color: #F3F3F3;
 }
-
 </style>

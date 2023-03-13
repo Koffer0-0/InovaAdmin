@@ -3,7 +3,7 @@
     <b-row>
       <b-col cols="9">
         <ToolBar page-header="List of labs"></ToolBar>
-        <DataTable :labels="labels" :data="data" />
+        <DataTable :labels="labels" :data="data" show-actions="true"/>
       </b-col>
       <b-col cols="3">
         <router-link to="">
@@ -25,7 +25,6 @@ const labels = [
   { text: "ID", field: 'id' },
   { text: "Name", field: 'name' },
   { text: "Description", field: 'description' },
-  { text: "Actions", field: 'actions' },
 ]
 const data = [
   { id: 10, name: 'Lab 1', description: 'Password Cracking' },
