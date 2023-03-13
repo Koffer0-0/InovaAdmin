@@ -1,7 +1,5 @@
-<!-- The search field component allows users to search for elements in a specific data set. -->
 <template>
     <b-nav-form right>
-        <!-- The input field where users can enter their search query. -->
         <b-form-input
             size="sm"
             placeholder="Search"
@@ -16,26 +14,58 @@
 export default {
     name: "SearchField",
     props: {
-        data: Array, // The data set to search through.
-        searchKey: String, // The key to use for searching in the data set.
+        data: Array,
+        searchKey: String,
     },
     data() {
         return {
-            searchQuery: "", // The user's search query.
+            searchQuery: "",
         };
     },
+
     watch: {
         searchQuery: function () {
             if (this.data?.length > 0 && this.searchQuery) {
-                let filteredData = this.data.filter((item) =>
-                    item[this.searchKey]
-                        .toLowerCase()
-                        .includes(this.searchQuery.toLowerCase())
-                );
+                let filteredData = this.data.filter((item) => {
+                    let match = false;
+                    this.searchKey.forEach((key) => {
+                        if (
+                            item[key] &&
+                            item[key]
+                                .toLowerCase()
+                                .includes(this.searchQuery.toLowerCase())
+                        ) {
+                            match = true;
+                        }
+                    });
+                    return match;
+                });
                 this.$emit("search", filteredData);
+            } else {
+                this.$emit("search", this.data);
             }
         },
     },
+    // watch: {
+    //     searchQuery: function () {
+    //         if (this.data?.length > 0 && this.searchQuery) {
+    //             let filteredData = this.data.filter(
+    //                 (item) =>
+    //                     item[this.searchKey]
+    //                         .toLowerCase()
+    //                         .includes(this.searchQuery.toLowerCase()) ||
+    //                     ["id", "name"].some((key) =>
+    //                         item[key]
+    //                             .toLowerCase()
+    //                             .includes(this.searchQuery.toLowerCase())
+    //                     )
+    //             );
+    //             this.$emit("search", filteredData);
+    //         } else {
+    //             this.$emit("search", this.data);
+    //         }
+    //     },
+    // },
 };
 </script>
 

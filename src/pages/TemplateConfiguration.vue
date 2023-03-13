@@ -7,7 +7,7 @@
                     <b-col class="ml-md-auto"> </b-col>
                     <SearchField
                         :data="data1"
-                        search-key="description"
+                        :search-key="['id', 'name', 'description']"
                         v-on:search="filteredData1 = $event"
                     ></SearchField>
                 </b-row>
