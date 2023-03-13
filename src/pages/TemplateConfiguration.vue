@@ -1,59 +1,41 @@
 <template>
-    <b-container fluid>
+  <b-container fluid>
+    <b-row>
+      <b-col cols="9">
         <b-row>
-            <TabComponent
-                @tab-activated="setActiveTab"
-                :tabs="tabs"
-            ></TabComponent>
-            <b-col class="ml-md-auto"> </b-col>
-            <SearchField
-                :data="data1"
-                search-key="description"
-                v-on:search="filteredData1 = $event"
-            ></SearchField>
+          <TabComponent @tab-activated="setActiveTab" :tabs="tabs"></TabComponent>
+          <b-col class="ml-md-auto"> </b-col>
+          <SearchField
+              :data="data1"
+              :search-key="['id', 'name', 'description']"
+              v-on:search="filteredData1 = $event"
+          ></SearchField>
         </b-row>
-        <b-row>
-            <b-col>
-                <div class="table" v-if="activeTab === 'tab1'">
-                    <DataTable
-                        :data="data1"
-                        :labels="labels1"
-                        :show-actions="true"
-                    />
-                </div>
-                <div v-else-if="activeTab === 'tab2'">
-                    <DataTable
-                        :data="data2"
-                        :labels="labels2"
-                        :show-actions="true"
-                    />
-                </div>
-            </b-col>
-            <b-col cols="3">
-                <router-link
-                    to="/lab-builder/template-configuration/new-template-config"
-                    v-if="activeTab === 'tab1'"
-                >
-                    <CreateButton
-                        buttonText="New Template"
-                        route-name="new scenario"
-                    >
-                    </CreateButton>
-                </router-link>
-                <router-link
-                    to="/lab-builder/template-configuration/new-scenario-config"
-                    v-if="activeTab === 'tab2'"
-                >
-                    <CreateButton
-                        buttonText="New Scenario"
-                        route-name="new template"
-                    >
-                    </CreateButton>
-                </router-link>
-            </b-col>
-        </b-row>
-    </b-container>
-</template>
+        <div class="table" v-if="activeTab === 'tab1'">
+          <DataTable :data="data1" :labels="labels1" />
+        </div>
+        <div v-else-if="activeTab === 'tab2'">
+          <DataTable :data="data2" :labels="labels2" />
+        </div>
+      </b-col>
+      <b-col cols="3">
+        <router-link
+            to="/lab-builder/template-configuration/new-template-config"
+            v-if="activeTab === 'tab1'"
+        >
+          <CreateButton buttonText="New Template"/>
+        </router-link>
+        <router-link
+            to="/lab-builder/template-configuration/new-scenario-config"
+            v-if="activeTab === 'tab2'"
+        >
+          <CreateButton
+              buttonText="New Scenario"
+          />
+        </router-link>
+      </b-col>
+    </b-row>
+  </b-container>
 
 <script>
 import CreateButton from "@/components/UI/CreateButton.vue";
