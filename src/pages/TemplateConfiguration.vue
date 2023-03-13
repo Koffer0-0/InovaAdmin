@@ -1,15 +1,13 @@
 <template>
   <b-container fluid>
     <b-row>
-    <b-col cols="9">
-     <b-row>
       <TabComponent @tab-activated="setActiveTab" :tabs="tabs"></TabComponent>
       <b-col class="ml-md-auto">
       </b-col>
       <SearchField :data="data1"
-                        search-key="description"
-                        v-on:search="filteredData1 = $event"
-                    ></SearchField>
+                   search-key="description"
+                   v-on:search="filteredData1 = $event"
+      ></SearchField>
     </b-row>
     <b-row>
       <b-col>
@@ -21,52 +19,29 @@
         </div>
       </b-col>
       <b-col cols="3">
-        <router-link to="/lab-builder/template-configuration/new-template-config" v-if="activeTab === 'tab1'">
-          <CreateButton buttonText="New Template">
-
+        <router-link
+            to="/lab-builder/template-configuration/new-template-config"
+            v-if="activeTab === 'tab1'"
+        >
+          <CreateButton
+              buttonText="New Template"
+              route-name="new scenario"
+          >
           </CreateButton>
         </router-link>
-        <router-link to="/lab-builder/template-configuration/new-scenario-config" v-if="activeTab === 'tab2'">
-          <CreateButton buttonText="New Scenario">
-                <div class="table" v-if="activeTab === 'tab1'">
-                    <DataTable
-                        :data="data1"
-                        :labels="labels1"
-                        :show-actions="true"
-                    />
-                </div>
-                <div v-else-if="activeTab === 'tab2'">
-                    <DataTable
-                        :data="data2"
-                        :labels="labels2"
-                        :show-actions="true"
-                    />
-                </div>
-            </b-col>
-            <b-col cols="3">
-                <router-link
-                    to="/lab-builder/lab-configuration/new-template"
-                    v-if="activeTab === 'tab1'"
-                >
-                    <CreateButton
-                        buttonText="New Template"
-                        route-name="new scenario"
-                    >
-                    </CreateButton>
-                </router-link>
-                <router-link
-                    to="/lab-builder/lab-configuration/new-template"
-                    v-if="activeTab === 'tab2'"
-                >
-                    <CreateButton
-                        buttonText="New Scenario"
-                        route-name="new template"
-                    >
-                    </CreateButton>
-                </router-link>
-            </b-col>
-        </b-row>
-    </b-container>
+        <router-link
+            to="/lab-builder/template-configuration/new-scenario-config"
+            v-if="activeTab === 'tab2'"
+        >
+          <CreateButton
+              buttonText="New Scenario"
+              route-name="new template"
+          >
+          </CreateButton>
+        </router-link>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>
@@ -104,32 +79,32 @@ const data2 = [
 ];
 
 export default {
-    name: "TemplateConfiguration",
-    components: { SearchField, TabComponent, CreateButton, DataTable },
-    data() {
-        return {
-            tabIndex: 0,
-            labels1: labels1,
-            data1: data1,
-            labels2: labels2,
-            data2: data2,
-            tabs: [
-                { id: "tab1", title: "App&Services" },
-                { id: "tab2", title: "Scenarios" },
-            ],
-            activeTab: "tab1",
-        };
+  name: "TemplateConfiguration",
+  components: {SearchField, TabComponent, CreateButton, DataTable},
+  data() {
+    return {
+      tabIndex: 0,
+      labels1: labels1,
+      data1: data1,
+      labels2: labels2,
+      data2: data2,
+      tabs: [
+        {id: "tab1", title: "App&Services"},
+        {id: "tab2", title: "Scenarios"},
+      ],
+      activeTab: "tab1",
+    };
+  },
+  methods: {
+    setActiveTab(tabId) {
+      this.activeTab = tabId;
     },
-    methods: {
-        setActiveTab(tabId) {
-            this.activeTab = tabId;
-        },
-    },
+  },
 };
 </script>
 
 <style scoped>
-  .table {
-    margin-top: 30px;
-  }
+.table {
+  margin-top: 30px;
+}
 </style>
