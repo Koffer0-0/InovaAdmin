@@ -1,12 +1,16 @@
 <template>
     <b-nav-form right>
-        <b-form-input
-            size="sm"
-            placeholder="Search"
-            type="search"
-            v-model="searchQuery"
-        >
-        </b-form-input>
+        <b-input-group class="mb-2 mr-sm-2 mb-sm-0">
+            <b-input-group-prepend is-text>
+                <b-icon icon="search"></b-icon>
+            </b-input-group-prepend>
+            <b-form-input
+                placeholder="Search..."
+                type="search"
+                v-model="searchQuery"
+            >
+            </b-form-input>
+        </b-input-group>
     </b-nav-form>
 </template>
 
@@ -26,46 +30,17 @@ export default {
     watch: {
         searchQuery: function () {
             if (this.data?.length > 0 && this.searchQuery) {
-                let filteredData = this.data.filter((item) => {
-                    let match = false;
-                    this.searchKey.forEach((key) => {
-                        if (
-                            item[key] &&
-                            item[key]
-                                .toLowerCase()
-                                .includes(this.searchQuery.toLowerCase())
-                        ) {
-                            match = true;
-                        }
-                    });
-                    return match;
-                });
+                let filteredData = this.data.filter((item) =>
+                    item[this.searchKey]
+                        .toLowerCase()
+                        .includes(this.searchQuery.toLowerCase())
+                );
                 this.$emit("search", filteredData);
             } else {
                 this.$emit("search", this.data);
             }
         },
     },
-    // watch: {
-    //     searchQuery: function () {
-    //         if (this.data?.length > 0 && this.searchQuery) {
-    //             let filteredData = this.data.filter(
-    //                 (item) =>
-    //                     item[this.searchKey]
-    //                         .toLowerCase()
-    //                         .includes(this.searchQuery.toLowerCase()) ||
-    //                     ["id", "name"].some((key) =>
-    //                         item[key]
-    //                             .toLowerCase()
-    //                             .includes(this.searchQuery.toLowerCase())
-    //                     )
-    //             );
-    //             this.$emit("search", filteredData);
-    //         } else {
-    //             this.$emit("search", this.data);
-    //         }
-    //     },
-    // },
 };
 </script>
 
