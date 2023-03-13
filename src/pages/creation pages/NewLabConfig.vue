@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="handleSubmit">
-  <div class="row">
+    <div class="row">
       <div class="col-md-9">
         <h5>Lab</h5>
         <DataInputFields
@@ -28,7 +28,7 @@
             type="submit"
         />
       </div>
-  </div>
+    </div>
   </form>
 </template>
 

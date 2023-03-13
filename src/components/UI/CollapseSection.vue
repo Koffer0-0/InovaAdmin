@@ -23,17 +23,23 @@
       <b-card no-body class="mb-1">
         <b-collapse :id="'accordion-' + (index + 2)" accordion="my-accordion" role="tabpanel">
           <b-card-body>
-            <TabComponent :tabs="tabs" @tab-activated="setActiveTab" >
+            <TabComponent :tabs="tabs" @tab-activated="setActiveTab">
             </TabComponent>
-            <div class="table" v-if="activeTab === 'tab1'">
-              SOME DATA
-            </div>
-            <div class="table" v-else-if="activeTab === 'tab2'">
-              APPS AND SERVICES
-            </div>
-            <div v-else-if="activeTab === 'tab3'">
+            <section v-if="activeTab === 'tab1'">
+              <div class="">
+                <input type="text" placeholder="Name" class="data-input ">
+                <input type="text" placeholder="Description" class="data-input ">
+                <select class="data-input ">
+                  <option></option>
+                </select>
+              </div>
+            </section>
+            <section class="table" v-else-if="activeTab === 'tab2'">
               <DataTable :data="data" :labels="labels" :show-actions="true"/>
-            </div>
+            </section>
+            <section v-else-if="activeTab === 'tab3'">
+              <DataTable :data="data" :labels="labels" :show-actions="true"/>
+            </section>
           </b-card-body>
         </b-collapse>
       </b-card>
@@ -74,9 +80,9 @@ export default {
       items: [],
       visible: false,
       tabs: [
-        { id: 'tab1', title: 'Data'},
-        { id: 'tab2', title: 'App&Services'},
-        { id: 'tab3', title: 'Scenarios'},
+        {id: 'tab1', title: 'Data'},
+        {id: 'tab2', title: 'App&Services'},
+        {id: 'tab3', title: 'Scenarios'},
       ],
       activeTab: 'tab1',
     }
@@ -108,5 +114,23 @@ export default {
 .collapse-btn:hover {
   background-color: #979797;
   color: #F3F3F3;
+}
+
+.data-input {
+  padding-left: 2rem;
+  width: 20rem;
+  display: block;
+  margin-top: 0.5rem;
+  border-top: 0px solid;
+  border-left: 0px solid;
+  border-bottom: 1px solid #CAC4D0;
+  border-right: 0px solid;
+  font-family: Lato, sans-serif;
+  font-size: 16px;
+  background-color: white;
+}
+
+select, option .data-input {
+  color: #979797;
 }
 </style>
