@@ -3,7 +3,7 @@
     <b-row>
       <b-col cols="9">
         <ToolBar page-header="Existing Stock Images"></ToolBar>
-        <DataTable :labels="labels" :data="data" />
+        <DataTable :labels="labels" :data="data" :show-actions="true"/>
       </b-col>
       <b-col cols="3">
         <router-link to="/lab-builder/lab-configuration/new-image">

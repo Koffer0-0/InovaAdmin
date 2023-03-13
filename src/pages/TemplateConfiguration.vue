@@ -10,10 +10,10 @@
         </b-row>
 
         <div class="table" v-if="activeTab === 'data1'">
-          <DataTable :data="data1" :labels="labels1"/>
+          <DataTable :data="data1" :labels="labels1" :show-actions="true"/>
         </div>
         <div v-else-if="activeTab === 'data2'">
-          <DataTable :data="data2" :labels="labels2"/>
+          <DataTable :data="data2" :labels="labels2" :show-actions="true"/>
         </div>
       </b-col>
       <b-col cols="3">
