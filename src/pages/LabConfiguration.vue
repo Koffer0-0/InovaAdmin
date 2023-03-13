@@ -6,7 +6,7 @@
                     page-header="Configure Existing Labs"
                     :show-search="false" :showtab="true"
                 ></ToolBar>
-                <DataTable :labels="labels" :data="data" />
+                <DataTable :labels="labels" :data="data" :show-actions="true"/>
             </b-col>
             <b-col cols="3">
                 <router-link to="/lab-builder/lab-configuration/new-lab">

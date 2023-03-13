@@ -2,8 +2,9 @@
   <div>
     <div class="tabs">
       <b-nav pills>
-        <b-nav-item   :class="{ active: activeTab === 'data1' }" @click="activateTab('data1')">Apps & Services</b-nav-item>
-        <b-nav-item :class="{ active: activeTab === 'data2' }" @click="activateTab('data2')">Scenarios</b-nav-item>
+        <b-nav-item  v-for="tab in tabs" :key="tab.id" :class="{ active: activeTab === tab.id }" @click="activateTab(tab.id)">
+          {{ tab.title }}
+        </b-nav-item>
       </b-nav>
     </div>
   </div>
@@ -14,15 +15,21 @@
 export default {
 
   name: "TabComponent",
+  props: {
+    tabs: {
+      type: Array,
+      required: true
+    }
+  },
   data() {
     return {
-      activeTab: 'data1'
+      activeTab: this.tabs[0].id,
     }
   },
   methods: {
-    activateTab(tabName) {
-      this.$emit('tab-activated', tabName);
-      this.activeTab = tabName
+    activateTab(tabId) {
+      this.$emit('tab-activated', tabId);
+      this.activeTab = tabId
     }
   }
 }
