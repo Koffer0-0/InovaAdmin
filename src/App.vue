@@ -41,7 +41,7 @@ export default {
 * {
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 .container-fluid {

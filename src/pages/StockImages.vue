@@ -6,7 +6,7 @@
         <DataTable :labels="labels" :data="data" :show-actions="true"/>
       </b-col>
       <b-col cols="3">
-        <router-link to="/lab-builder/lab-configuration/new-image">
+        <router-link to="/lab-builder/stock-images/new-stock-image">
           <CreateButton buttonText="New Stock Image">
 
           </CreateButton>

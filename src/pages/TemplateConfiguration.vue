@@ -1,20 +1,33 @@
 <template>
-    <b-container fluid>
-        <b-row>
-            <b-col cols="9">
-                <b-row>
-                    <TabComponent
-                        @tab-activated="setActiveTab"
-                        :tabs="tabs"
-                    ></TabComponent>
-                    <b-col class="ml-md-auto"> </b-col>
-                    <SearchField
-                        :data="data1"
+  <b-container fluid>
+    <b-row>
+    <b-col cols="9">
+     <b-row>
+      <TabComponent @tab-activated="setActiveTab" :tabs="tabs"></TabComponent>
+      <b-col class="ml-md-auto">
+      </b-col>
+      <SearchField :data="data1"
                         search-key="description"
                         v-on:search="filteredData1 = $event"
                     ></SearchField>
-                </b-row>
+    </b-row>
+    <b-row>
+      <b-col>
+        <div class="table" v-if="activeTab === 'tab1'">
+          <DataTable :data="data1" :labels="labels1" :show-actions="true"/>
+        </div>
+        <div v-else-if="activeTab === 'tab2'">
+          <DataTable :data="data2" :labels="labels2" :show-actions="true"/>
+        </div>
+      </b-col>
+      <b-col cols="3">
+        <router-link to="/lab-builder/template-configuration/new-template-config" v-if="activeTab === 'tab1'">
+          <CreateButton buttonText="New Template">
 
+          </CreateButton>
+        </router-link>
+        <router-link to="/lab-builder/template-configuration/new-scenario-config" v-if="activeTab === 'tab2'">
+          <CreateButton buttonText="New Scenario">
                 <div class="table" v-if="activeTab === 'tab1'">
                     <DataTable
                         :data="data1"
@@ -63,31 +76,31 @@ import TabComponent from "@/components/UI/TabComponent.vue";
 import SearchField from "@/components/UI/SearchField.vue";
 
 const labels1 = [
-    { text: "ID", field: "id" },
-    { text: "Name", field: "name" },
-    { text: "Description", field: "description" },
-    { text: "Images", field: "images" },
+  {text: "ID", field: "id"},
+  {text: "Name", field: "name"},
+  {text: "Description", field: "description"},
+  {text: "Images", field: "images"},
 ];
 const labels2 = [
-    { text: "ID", field: "id" },
-    { text: "Name", field: "name" },
-    { text: "Description", field: "description" },
+  {text: "ID", field: "id"},
+  {text: "Name", field: "name"},
+  {text: "Description", field: "description"},
 ];
 const data1 = [
-    { id: 10, name: "3r4f34f 1", description: "Password Cracking" },
-    { id: 11, name: "34f34r 13", description: "SIEM and MISP machine" },
-    { id: 15, name: "wfwef 15", description: "AD auditing lab" },
-    {
-        id: 34,
-        name: "wefwef 31",
-        description: "Threat Hunting and Investigation",
-    },
+  {id: 10, name: "3r4f34f 1", description: "Password Cracking"},
+  {id: 11, name: "34f34r 13", description: "SIEM and MISP machine"},
+  {id: 15, name: "wfwef 15", description: "AD auditing lab"},
+  {
+    id: 34,
+    name: "wefwef 31",
+    description: "Threat Hunting and Investigation",
+  },
 ];
 const data2 = [
-    { id: 10, name: "Lab 1", description: "Password Cracking" },
-    { id: 11, name: "Lab 13", description: "SIEM and MISP machine" },
-    { id: 15, name: "Lab 15", description: "AD auditing lab" },
-    { id: 34, name: "Lab 31", description: "Threat Hunting and Investigation" },
+  {id: 10, name: "Lab 1", description: "Password Cracking"},
+  {id: 11, name: "Lab 13", description: "SIEM and MISP machine"},
+  {id: 15, name: "Lab 15", description: "AD auditing lab"},
+  {id: 34, name: "Lab 31", description: "Threat Hunting and Investigation"},
 ];
 
 export default {
@@ -116,7 +129,7 @@ export default {
 </script>
 
 <style scoped>
-.table {
+  .table {
     margin-top: 30px;
-}
+  }
 </style>
