@@ -29,7 +29,7 @@ export default {
   methods: {
     activateTab(tabId) {
       this.$emit('tab-activated', tabId);
-      this.activeTab = tabId
+      this.activeTab = tabId;
     }
   }
 }
@@ -37,9 +37,6 @@ export default {
 </script>
 
 <style scoped>
-/*.tabs{*/
-/*  margin-bottom: 40px;*/
-/*}*/
 .nav-pills .nav-link {
   border-radius: 0;
 }
@@ -54,5 +51,8 @@ export default {
 
 .active {
   background-color: #F3F3F3;
+}
+.active a {
+  color: #6750A4;
 }
 </style>

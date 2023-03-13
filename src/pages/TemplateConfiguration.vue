@@ -1,20 +1,19 @@
 <template>
     <b-container fluid>
         <b-row>
-            <b-col cols="9">
-                <b-row>
-                    <TabComponent
-                        @tab-activated="setActiveTab"
-                        :tabs="tabs"
-                    ></TabComponent>
-                    <b-col class="ml-md-auto"> </b-col>
-                    <SearchField
-                        :data="data1"
-                        search-key="description"
-                        v-on:search="filteredData1 = $event"
-                    ></SearchField>
-                </b-row>
-
+            <TabComponent
+                @tab-activated="setActiveTab"
+                :tabs="tabs"
+            ></TabComponent>
+            <b-col class="ml-md-auto"> </b-col>
+            <SearchField
+                :data="data1"
+                search-key="description"
+                v-on:search="filteredData1 = $event"
+            ></SearchField>
+        </b-row>
+        <b-row>
+            <b-col>
                 <div class="table" v-if="activeTab === 'tab1'">
                     <DataTable
                         :data="data1"
@@ -32,7 +31,7 @@
             </b-col>
             <b-col cols="3">
                 <router-link
-                    to="/lab-builder/lab-configuration/new-template"
+                    to="/lab-builder/template-configuration/new-template-config"
                     v-if="activeTab === 'tab1'"
                 >
                     <CreateButton
@@ -42,7 +41,7 @@
                     </CreateButton>
                 </router-link>
                 <router-link
-                    to="/lab-builder/lab-configuration/new-template"
+                    to="/lab-builder/template-configuration/new-scenario-config"
                     v-if="activeTab === 'tab2'"
                 >
                     <CreateButton

@@ -22,8 +22,8 @@
 
 
 <script>
-import FileExplorer from "@/pages/FileExplorer.vue";
-import CodeEditor from "@/pages/CodeEditor.vue";
+import FileExplorer from "@/pages/code editor/FileExplorer.vue";
+import CodeEditor from "@/pages/code editor/CodeEditor.vue";
 
 export default {
   name: "FileEditor",
