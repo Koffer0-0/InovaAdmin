@@ -3,26 +3,26 @@
     <b-row>
       <b-col cols="9">
         <b-row>
-          <TabComponent @tab-activated="setActiveTab"></TabComponent>
+          <TabComponent @tab-activated="setActiveTab" :tabs="tabs" ></TabComponent>
           <b-col class="ml-md-auto">
           </b-col>
           <SearchField></SearchField>
         </b-row>
 
-        <div class="table" v-if="activeTab === 'data1'">
+        <div class="table" v-if="activeTab === 'tab1'">
           <DataTable :data="data1" :labels="labels1" :show-actions="true"/>
         </div>
-        <div v-else-if="activeTab === 'data2'">
+        <div v-else-if="activeTab === 'tab2'">
           <DataTable :data="data2" :labels="labels2" :show-actions="true"/>
         </div>
       </b-col>
       <b-col cols="3">
-        <router-link to="/lab-builder/lab-configuration/new-template" v-if="activeTab === 'data1'">
+        <router-link to="/lab-builder/lab-configuration/new-template" v-if="activeTab === 'tab1'">
           <CreateButton buttonText="New Template" route-name="new scenario">
 
           </CreateButton>
         </router-link>
-        <router-link to="/lab-builder/lab-configuration/new-template" v-if="activeTab === 'data2'">
+        <router-link to="/lab-builder/lab-configuration/new-template" v-if="activeTab === 'tab2'">
           <CreateButton buttonText="New Scenario" route-name="new template">
 
           </CreateButton>
@@ -72,12 +72,16 @@ export default {
       data1: data1,
       labels2: labels2,
       data2: data2,
-      activeTab: 'data1',
+      tabs: [
+        { id: 'tab1', title: 'App&Services'},
+        { id: 'tab2', title: 'Scenarios'},
+      ],
+      activeTab: 'tab1',
     }
   },
   methods: {
-    setActiveTab(tabName) {
-      this.activeTab = tabName;
+    setActiveTab(tabId) {
+      this.activeTab = tabId;
     }
   }
 
