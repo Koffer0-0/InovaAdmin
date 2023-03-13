@@ -74,8 +74,8 @@ export default {
       labels2: labels2,
       data2: data2,
       tabs: [
-        {id: "tab1", title: "App&Services"},
-        {id: "tab2", title: "Scenarios"},
+        {id: "tab1", title: "Existing Stock Images"},
+        {id: "tab2", title: "Custom Images"},
       ],
       activeTab: "tab1",
     };
