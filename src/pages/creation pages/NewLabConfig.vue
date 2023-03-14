@@ -10,6 +10,7 @@
         <NetworkComponent>
 
         </NetworkComponent>
+        <!--TODO make the transfer between Network and CollapseSection components to transfer the network array and show it collapse-->
         <CollapseSection select-text="Select Images">
 
         </CollapseSection>

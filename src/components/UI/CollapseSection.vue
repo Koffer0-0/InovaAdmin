@@ -43,6 +43,25 @@
           </b-card-body>
         </b-collapse>
       </b-card>
+      <b-button block v-b-toggle="'accordion-' + (index + 2)" class="collapse-btn">
+        {{ item.name }}
+        <b-icon :icon="visible ? 'caret-down' : 'caret-up'" class="icon"></b-icon>
+      </b-button>
+      <b-card no-body class="mb-1">
+        <b-collapse :id="'accordion-' + (index + 2)" accordion="my-accordion" role="tabpanel">
+          <b-card-body>
+            <b-form-group v-slot="{ ariaDescribedby }">
+              <b-form-checkbox-group
+                  id="checkbox-group-1"
+                  v-model="selected"
+                  :options="options"
+                  :aria-describedby="ariaDescribedby"
+                  name="flavour-1"
+              ></b-form-checkbox-group>
+            </b-form-group>
+          </b-card-body>
+        </b-collapse>
+      </b-card>
     </div>
   </div>
 </template>
@@ -85,6 +104,11 @@ export default {
         {id: 'tab3', title: 'Scenarios'},
       ],
       activeTab: 'tab1',
+      selected: [], // Must be an array reference!
+      options: [
+        { text: 'Enable Remote Management', value: 'enableManagement' },
+        { text: 'Create Management User', value: 'createManagement' }
+      ]
     }
   },
   methods: {
@@ -130,7 +154,4 @@ export default {
   background-color: white;
 }
 
-select, option .data-input {
-  color: #979797;
-}
 </style>

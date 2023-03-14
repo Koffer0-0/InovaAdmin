@@ -57,10 +57,10 @@ const data1 = [
   {id: 34, name: "wefwef 31", description: "Threat Hunting and Investigation",},
 ];
 const data2 = [
-  {id: 10, name: "Lab 1", description: "Password Cracking"},
-  {id: 11, name: "Lab 13", description: "SIEM and MISP machine"},
-  {id: 15, name: "Lab 15", description: "AD auditing lab"},
-  {id: 34, name: "Lab 31", description: "Threat Hunting and Investigation"},
+  {id: 10, name: "Custom Lab 1", description: "Password Cracking"},
+  {id: 11, name: "Custom Lab 13", description: "SIEM and MISP machine"},
+  {id: 15, name: "Custom Lab 15", description: "AD auditing lab"},
+  {id: 34, name: "Custom Lab 31", description: "Threat Hunting and Investigation"},
 ];
 
 export default {
